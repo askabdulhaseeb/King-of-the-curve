@@ -1,0 +1,50 @@
+name: kings_of_the_curve
+description: A new Flutter application.
+
+publish_to: 'none'
+
+version: 1.0.1+2
+
+environment:
+  sdk: ">=2.11.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  url_launcher: ^6.0.3
+  provider: ^5.0.0
+  flutter_login_facebook: ^1.0.1
+  firebase_auth: ^1.0.3
+  google_api_availability: ^3.0.1
+  google_sign_in: ^5.0.1
+  cloud_firestore: ^1.0.4
+  firebase_core: ^1.0.3
+  firebase_auth_web: ^1.0.5
+  csv: ^5.0.0
+  flutter_rating_bar: ^4.0.0
+  shared_preferences: ^2.0.5
+  flutter_styled_toast: ^2.0.0
+  apple_sign_in: ^0.1.0
+  bouncing_widget: ^2.0.0
+  animate_do: ^2.0.0
+  delayed_display: ^2.0.0
+  carousel_pro: ^1.0.0
+  photo_view: ^0.11.1
+  flutter_inapp_purchase: ^5.0.0
+  in_app_purchase: ^0.5.2
+  flutter_typeahead: ^3.1.1
+  email_validator: ^2.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/app_csv_files/FourAnswers.csv
+    - assets/app_csv_files/TwoAnswers.csv
