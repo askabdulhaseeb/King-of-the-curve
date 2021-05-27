@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:io';
 import 'dart:ui';
-
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inapp_purchase/flutter_inapp_purchase.dart';
@@ -52,12 +51,12 @@ class _YourAnswersEndlessModeState extends State<YourAnswersEndlessMode>
     with BaseClass {
   final String iapId = "single_month_subscription";
   final String iapId2 = "twelve_month_subscription";
-  final String iapId3 = "six_month_subsciption";
+  final String iapId3 = "six_month_subscription";
   List<IAPItem> _items = [];
 
   StreamSubscription _purchaseUpdatedSubscription;
   StreamSubscription _purchaseErrorSubscription;
-  StreamSubscription _conectionSubscription;
+  StreamSubscription _connectionSubscription;
 
   @override
   void initState() {
@@ -111,14 +110,14 @@ class _YourAnswersEndlessModeState extends State<YourAnswersEndlessMode>
         print('consumeAllItems error: $err');
       }
 
-      _conectionSubscription =
+      _connectionSubscription =
           FlutterInappPurchase.connectionUpdated.listen((connected) {
         print('connected: $connected');
       });
 
       _purchaseUpdatedSubscription =
           FlutterInappPurchase.purchaseUpdated.listen((productItem) {
-        print("ANDROIDDDDD" + productItem.dataAndroid.toString());
+        print("Android" + productItem.dataAndroid.toString());
         print('purchase-updated: ${productItem.transactionId}');
         print('purchase-updated: ${productItem.transactionDate}');
 
@@ -134,7 +133,7 @@ class _YourAnswersEndlessModeState extends State<YourAnswersEndlessMode>
               productItem.transactionDate,
               DateTime.now().copyWithAdditional(years: 0, months: 12));
           print(DateTime.now().copyWithAdditional(years: 0, months: 12));
-        } else if (productItem.productId == "six_month_subsciption") {
+        } else if (productItem.productId == "six_month_subscription") {
           _questionProvider.switchToPremium(
               productItem.transactionId,
               productItem.transactionDate,
@@ -182,9 +181,9 @@ class _YourAnswersEndlessModeState extends State<YourAnswersEndlessMode>
       _purchaseUpdatedSubscription.cancel();
       _purchaseUpdatedSubscription = null;
     }
-    if (_conectionSubscription != null) {
-      _conectionSubscription.cancel();
-      _conectionSubscription = null;
+    if (_connectionSubscription != null) {
+      _connectionSubscription.cancel();
+      _connectionSubscription = null;
     }
   }
 
@@ -240,7 +239,7 @@ class _YourAnswersEndlessModeState extends State<YourAnswersEndlessMode>
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              getCustomAppBar(context, topMargin: appbarTopMargin),
+              getCustomAppBar(context, topMargin: appBarTopMargin),
               Container(
                 margin: EdgeInsets.only(
                     top: Dimensions.pixels_15, left: Dimensions.pixels_30),
@@ -362,7 +361,6 @@ class _YourAnswersEndlessModeState extends State<YourAnswersEndlessMode>
                         bottomMargin: Dimensions.pixels_30,
                         textColor: Colors.white,
                         onPressed: (value) {
-
                           popToPreviousScreen(context: context);
                           _inAppBottomSheet(context);
                         },
@@ -649,17 +647,17 @@ class _YourAnswersEndlessModeState extends State<YourAnswersEndlessMode>
                 children: [
                   GestureDetector(
                     onTap: () async {
-
-                      if(sharedPreferenceProvider.userDataModel.isPremium) {
+                      if (sharedPreferenceProvider.userDataModel.isPremium) {
                         if (sharedPreferenceProvider
                             .userDataModel.bookMarkedQuestions
                             .contains(fourQuestionModel.documentId)) {
                           // remove from user review list
                           showCircularDialog(context);
-                          bool value = await questionProvider
-                              .removeEndlessReview(
-                              fourQuestionModel,
-                              sharedPreferenceProvider.userDataModel.userId);
+                          bool value =
+                              await questionProvider.removeEndlessReview(
+                                  fourQuestionModel,
+                                  sharedPreferenceProvider
+                                      .userDataModel.userId);
                           popToPreviousScreen(context: context);
                           setState(() {});
                         } else {
@@ -671,7 +669,7 @@ class _YourAnswersEndlessModeState extends State<YourAnswersEndlessMode>
                           popToPreviousScreen(context: context);
                           setState(() {});
                         }
-                      }else{
+                      } else {
                         premiumDialog(context);
                       }
                     },
@@ -749,7 +747,7 @@ class _YourAnswersEndlessModeState extends State<YourAnswersEndlessMode>
             physics: NeverScrollableScrollPhysics(),
             itemBuilder: (_, index) {
               return Container(
-                child: _gertAnswerTile(
+                child: _getAnswerTile(
                     backgroundColor: getOptionBackgroundColor(
                         correctAnswer: fourQuestionModel.answer,
                         selectedAnswer: fourQuestionModel.selectedAnswer,
@@ -916,7 +914,7 @@ Color getOptionTextColor({
   }
 }
 
-Widget _gertAnswerTile(
+Widget _getAnswerTile(
     {String title, Color backgroundColor, Color textColor, String subTitle}) {
   return Container(
     padding: EdgeInsets.all(Dimensions.pixels_15),

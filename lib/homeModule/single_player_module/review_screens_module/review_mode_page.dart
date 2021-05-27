@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kings_of_the_curve/homeModule/single_player_module/options_module/options_page.dart';
 import 'package:kings_of_the_curve/homeModule/single_player_module/review_screens_module/review_mode_option_module.dart';
 import 'package:kings_of_the_curve/homeModule/single_player_module/review_screens_module/review_mode_play_screens/review_mode_questions_page.dart';
 import 'package:kings_of_the_curve/utils/appColors.dart';
@@ -30,7 +29,7 @@ class _ReviewModePageState extends State<ReviewModePage> with BaseClass {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    getCustomAppBar(context, topMargin: appbarTopMargin),
+                    getCustomAppBar(context, topMargin: appBarTopMargin),
                     Container(
                       margin: EdgeInsets.only(
                           top: Dimensions.pixels_15,

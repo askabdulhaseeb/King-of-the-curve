@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kings_of_the_curve/homeModule/single_player_module/end_less_mode_module/leaderboard_module/end_less_leadership_page.dart';
-import 'package:kings_of_the_curve/homeModule/single_player_module/options_module/options_page.dart';
 import 'package:kings_of_the_curve/homeModule/single_player_module/timed_mode_module/timed_mode_option_module/timed_option_page.dart';
 import 'package:kings_of_the_curve/homeModule/single_player_module/timed_mode_module/timed_mode_play/testing_timed/timed_mode_questions_answer_page.dart';
-import 'package:kings_of_the_curve/homeModule/single_player_module/timed_mode_module/timed_mode_play/timed_mode_questions_page.dart';
-import 'package:kings_of_the_curve/providers/four_questions_provider.dart';
 import 'package:kings_of_the_curve/providers/question_provider.dart';
 import 'package:kings_of_the_curve/utils/appColors.dart';
 import 'package:kings_of_the_curve/utils/appImages.dart';
@@ -14,7 +10,6 @@ import 'package:kings_of_the_curve/utils/constantsValues.dart';
 import 'package:kings_of_the_curve/utils/widget_dimensions.dart';
 import 'package:kings_of_the_curve/widgets/homeCardWidget.dart';
 import 'package:provider/provider.dart';
-
 import 'leaderboard_module/timed_leadership_page.dart';
 
 class TimedModePage extends StatefulWidget {
@@ -39,7 +34,7 @@ class _TimedModePageState extends State<TimedModePage> with BaseClass {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    getCustomAppBar(context, topMargin: appbarTopMargin),
+                    getCustomAppBar(context, topMargin: appBarTopMargin),
                     Container(
                       margin: EdgeInsets.only(
                           top: Dimensions.pixels_15,

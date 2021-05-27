@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kings_of_the_curve/utils/size_config.dart';
 import 'package:kings_of_the_curve/utils/widget_dimensions.dart';
-
 import 'appColors.dart';
 
 BoxDecoration getScreenBackgroundDecoration({Color color = Colors.white}) {
@@ -22,7 +21,9 @@ Widget getDivider({Color dividerColor = dividerColor}) {
 }
 
 Widget getCustomAppBar(BuildContext context,
-    {double topMargin = 0, Color iconColor = Colors.white,Function onBackClick}) {
+    {double topMargin = 0,
+    Color iconColor = Colors.white,
+    Function onBackClick}) {
   return Container(
     width: double.infinity,
     height: Dimensions.pixels_56,
@@ -30,10 +31,9 @@ Widget getCustomAppBar(BuildContext context,
     alignment: Alignment.centerLeft,
     child: GestureDetector(
       onTap: () {
-        if(onBackClick!=null){
+        if (onBackClick != null) {
           onBackClick();
-        }
-        else {
+        } else {
           Navigator.pop(context);
         }
       },
@@ -73,7 +73,9 @@ Widget getCustomAppBarWithText(BuildContext context, String title,
                 color: iconColor,
               ),
             ),
-            SizedBox(width: Dimensions.pixels_8,),
+            SizedBox(
+              width: Dimensions.pixels_8,
+            ),
             Text(
               title,
               style: TextStyle(

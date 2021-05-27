@@ -53,7 +53,7 @@ class _ReviewOptionsPageState extends State<ReviewOptionsPage> {
             ? Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  getCustomAppBar(context, topMargin: appbarTopMargin),
+                  getCustomAppBar(context, topMargin: appBarTopMargin),
                   Container(
                     margin: EdgeInsets.only(
                         top: Dimensions.pixels_15, left: Dimensions.pixels_30),
@@ -113,7 +113,8 @@ class _ReviewOptionsPageState extends State<ReviewOptionsPage> {
                                               .categoryDocumentId,
                                           context,
                                           sharePrefProvider
-                                              .userDataModel.userId,index);
+                                              .userDataModel.userId,
+                                          index);
                                       setState(() {});
                                     } else {
                                       optionProvider.changeReviewCategoryStatus(
@@ -127,13 +128,15 @@ class _ReviewOptionsPageState extends State<ReviewOptionsPage> {
                                               .categoryDocumentId,
                                           context,
                                           sharePrefProvider
-                                              .userDataModel.userId,index);
+                                              .userDataModel.userId,
+                                          index);
                                     }
                                   },
                                   onCardClicked: (value) {
                                     print(index);
                                     setState(() {
-                                      if (optionProvider.getAsyncReviewOptionList
+                                      if (optionProvider
+                                          .getAsyncReviewOptionList
                                           .elementAt(index)
                                           .isSubCategoriesVisible) {
                                         optionProvider.getAsyncReviewOptionList
@@ -167,7 +170,8 @@ class _ReviewOptionsPageState extends State<ReviewOptionsPage> {
                                         return _getSubCategoryOptionWidget(
                                             subCat,
                                             optionProvider,
-                                            sharePrefProvider,index);
+                                            sharePrefProvider,
+                                            index);
                                       }),
                                       getDivider(),
                                     ],
@@ -297,7 +301,8 @@ class _ReviewOptionsPageState extends State<ReviewOptionsPage> {
   Widget _getSubCategoryOptionWidget(
       ReviewSubCatList list,
       OptionProvider optionProvider,
-      SharedPreferenceProvider sharePrefProvider,int categoryIndex) {
+      SharedPreferenceProvider sharePrefProvider,
+      int categoryIndex) {
     //print(list.isSubCategorySelected);
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -318,24 +323,28 @@ class _ReviewOptionsPageState extends State<ReviewOptionsPage> {
           onTap: () {
             if (list.isSubCatSelected) {
               optionProvider.changeReviewSubCategoryStatus(
-                  list.isSubCatSelected,
-                  list.subCatId,
-                  context,
-                  sharePrefProvider.userDataModel.userId, categoryIndex,
+                list.isSubCatSelected,
+                list.subCatId,
+                context,
+                sharePrefProvider.userDataModel.userId,
+                categoryIndex,
                 optionProvider.getAsyncReviewOptionList
                     .elementAt(categoryIndex)
                     .subCategoryList
-                    .indexOf(list),);
+                    .indexOf(list),
+              );
             } else {
               optionProvider.changeReviewSubCategoryStatus(
-                  list.isSubCatSelected,
-                  list.subCatId,
-                  context,
-                  sharePrefProvider.userDataModel.userId,categoryIndex,
+                list.isSubCatSelected,
+                list.subCatId,
+                context,
+                sharePrefProvider.userDataModel.userId,
+                categoryIndex,
                 optionProvider.getAsyncReviewOptionList
                     .elementAt(categoryIndex)
                     .subCategoryList
-                    .indexOf(list),);
+                    .indexOf(list),
+              );
             }
           },
           child: Container(

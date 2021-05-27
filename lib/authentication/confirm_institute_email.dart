@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
-import 'package:kings_of_the_curve/models/intitutes_model.dart';
-import 'package:kings_of_the_curve/providers/intitute_provider.dart';
+import 'package:kings_of_the_curve/models/institutes_model.dart';
+import 'package:kings_of_the_curve/providers/institute_provider.dart';
 import 'package:kings_of_the_curve/providers/shared_preference_provider.dart';
 import 'package:kings_of_the_curve/utils/appColors.dart';
 import 'package:kings_of_the_curve/utils/baseClass.dart';
 import 'package:kings_of_the_curve/utils/constantWidgets.dart';
 import 'package:kings_of_the_curve/utils/constantsValues.dart';
 import 'package:kings_of_the_curve/utils/widget_dimensions.dart';
-import 'package:kings_of_the_curve/widgets/edittext_with_hint.dart';
+import 'package:kings_of_the_curve/widgets/edit_text_with_hint.dart';
 import 'package:kings_of_the_curve/widgets/rounded_edge_button.dart';
 import 'package:provider/provider.dart';
 
@@ -54,7 +54,7 @@ class _ConfirmInstituteEmailPageState extends State<ConfirmInstituteEmailPage>
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        getCustomAppBar(context, topMargin: appbarTopMargin),
+                        getCustomAppBar(context, topMargin: appBarTopMargin),
                         Container(
                           margin: EdgeInsets.only(top: 15, left: appLeftMargin),
                           child: Text(
@@ -127,7 +127,7 @@ class _ConfirmInstituteEmailPageState extends State<ConfirmInstituteEmailPage>
                     ),*/
                         ),
                         SizedBox(
-                          height: appbarTopMargin,
+                          height: appBarTopMargin,
                         ),
                         Expanded(
                           child: Container(
@@ -174,30 +174,28 @@ class _ConfirmInstituteEmailPageState extends State<ConfirmInstituteEmailPage>
                                             showError(context,
                                                 "Email cannot be empty");
                                           } else {
-                                            if(widget.isRegister){
-                                              Map<String,String> params ={
-                                                'institute':_typeAheadController.text
+                                            if (widget.isRegister) {
+                                              Map<String, String> params = {
+                                                'institute':
+                                                    _typeAheadController.text
+                                                        .trim(),
+                                                'email': _emailController.text
                                                     .trim(),
-                                                'email':_emailController.text
-                                                    .trim(),
-                                                'id':selectedModel.id,
+                                                'id': selectedModel.id,
                                               };
-                                              Navigator.pop(context,params);
-
-                                            }
-                                            else{
+                                              Navigator.pop(context, params);
+                                            } else {
                                               instituteProvider
                                                   .updateInstituteName(
-                                                  sharedPrefProvider
-                                                      .userDataModel.userId,
-                                                  selectedModel
-                                                      .institutionName,
-                                                  selectedModel.id,
-                                                  context,
-                                                  _emailController.text
-                                                      .trim());
+                                                      sharedPrefProvider
+                                                          .userDataModel.userId,
+                                                      selectedModel
+                                                          .institutionName,
+                                                      selectedModel.id,
+                                                      context,
+                                                      _emailController.text
+                                                          .trim());
                                             }
-
                                           }
                                         },
                                         context: context),

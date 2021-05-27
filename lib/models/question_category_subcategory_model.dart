@@ -26,7 +26,7 @@ class EndlessQuestionCategorySubcategoryModel {
             await documentReference.parent.doc(documentReference.id).get();
 
         if (!isCategorySelected) {
-          subCategoryList.add(new SubCategoryList.fromJson(
+          subCategoryList.add(SubCategoryList.fromJson(
               documentReference,
               false,
               userUnSelectedSubCategories,

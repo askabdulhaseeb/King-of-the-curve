@@ -4,7 +4,7 @@ import 'package:kings_of_the_curve/utils/baseClass.dart';
 import 'package:kings_of_the_curve/utils/constantWidgets.dart';
 import 'package:kings_of_the_curve/utils/constantsValues.dart';
 import 'package:kings_of_the_curve/utils/widget_dimensions.dart';
-import 'package:kings_of_the_curve/widgets/edittext_with_hint.dart';
+import 'package:kings_of_the_curve/widgets/edit_text_with_hint.dart';
 import 'package:kings_of_the_curve/widgets/rounded_edge_button.dart';
 
 class EditEmailPage extends StatefulWidget {
@@ -12,7 +12,7 @@ class EditEmailPage extends StatefulWidget {
   _EditEmailPageState createState() => _EditEmailPageState();
 }
 
-class _EditEmailPageState extends State<EditEmailPage> with BaseClass{
+class _EditEmailPageState extends State<EditEmailPage> with BaseClass {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,9 +26,11 @@ class _EditEmailPageState extends State<EditEmailPage> with BaseClass{
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      getCustomAppBar(context, topMargin: appbarTopMargin),
+                      getCustomAppBar(context, topMargin: appBarTopMargin),
                       Container(
-                        margin: EdgeInsets.only(top: Dimensions.pixels_15, left: Dimensions.pixels_30),
+                        margin: EdgeInsets.only(
+                            top: Dimensions.pixels_15,
+                            left: Dimensions.pixels_30),
                         child: Text(
                           "Settings",
                           style: TextStyle(
@@ -48,7 +50,9 @@ class _EditEmailPageState extends State<EditEmailPage> with BaseClass{
                             children: [
                               Container(
                                 margin: EdgeInsets.only(
-                                    top: Dimensions.pixels_33, left: Dimensions.pixels_30, right: Dimensions.pixels_30),
+                                    top: Dimensions.pixels_33,
+                                    left: Dimensions.pixels_30,
+                                    right: Dimensions.pixels_30),
                                 child: Text(
                                   "Edit Email",
                                   style: TextStyle(
@@ -65,7 +69,6 @@ class _EditEmailPageState extends State<EditEmailPage> with BaseClass{
                                 rightMargin: Dimensions.pixels_30,
                                 topMargin: Dimensions.pixels_40,
                               ),
-
                               EditTextWithHint(
                                 hintText: "New Email",
                                 context: context,

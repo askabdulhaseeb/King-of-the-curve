@@ -2,7 +2,6 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:kings_of_the_curve/models/four_question_model.dart';
-import 'package:kings_of_the_curve/services/firestore_service.dart';
 import 'package:kings_of_the_curve/utils/baseClass.dart';
 
 class FourQuestionsProvider with ChangeNotifier, BaseClass {
@@ -64,7 +63,7 @@ class FourQuestionsProvider with ChangeNotifier, BaseClass {
     _currentQuestion = FourQuestionModel(
         category: list.elementAt(0),
         question: list.elementAt(1),
-      /*  optionOne: list.elementAt(2),
+        /*  optionOne: list.elementAt(2),
         optionTwo: list.elementAt(3),
         optionThree: list.elementAt(4),
         optionFour: list.elementAt(5),*/
@@ -82,6 +81,4 @@ class FourQuestionsProvider with ChangeNotifier, BaseClass {
   FourQuestionModel get getCurrentQuestion {
     return _currentQuestion;
   }
-
-
 }

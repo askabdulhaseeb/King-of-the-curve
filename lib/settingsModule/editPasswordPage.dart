@@ -4,7 +4,7 @@ import 'package:kings_of_the_curve/utils/baseClass.dart';
 import 'package:kings_of_the_curve/utils/constantWidgets.dart';
 import 'package:kings_of_the_curve/utils/constantsValues.dart';
 import 'package:kings_of_the_curve/utils/widget_dimensions.dart';
-import 'package:kings_of_the_curve/widgets/edittext_with_hint.dart';
+import 'package:kings_of_the_curve/widgets/edit_text_with_hint.dart';
 import 'package:kings_of_the_curve/widgets/rounded_edge_button.dart';
 
 class EditPasswordPage extends StatefulWidget {
@@ -13,10 +13,9 @@ class EditPasswordPage extends StatefulWidget {
 }
 
 class _EditPasswordPageState extends State<EditPasswordPage> with BaseClass {
-
-  bool isOldPasswordShow = true ;
-  bool isNewPasswordShow = true ;
-  bool isConfirmPasswordShow = true ;
+  bool isOldPasswordShow = true;
+  bool isNewPasswordShow = true;
+  bool isConfirmPasswordShow = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,9 +29,11 @@ class _EditPasswordPageState extends State<EditPasswordPage> with BaseClass {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      getCustomAppBar(context, topMargin: appbarTopMargin),
+                      getCustomAppBar(context, topMargin: appBarTopMargin),
                       Container(
-                        margin: EdgeInsets.only(top: Dimensions.pixels_15, left: Dimensions.pixels_30),
+                        margin: EdgeInsets.only(
+                            top: Dimensions.pixels_15,
+                            left: Dimensions.pixels_30),
                         child: Text(
                           "Settings",
                           style: TextStyle(
@@ -52,7 +53,9 @@ class _EditPasswordPageState extends State<EditPasswordPage> with BaseClass {
                             children: [
                               Container(
                                 margin: EdgeInsets.only(
-                                    top: Dimensions.pixels_33, left: Dimensions.pixels_30, right: Dimensions.pixels_30),
+                                    top: Dimensions.pixels_33,
+                                    left: Dimensions.pixels_30,
+                                    right: Dimensions.pixels_30),
                                 child: Text(
                                   "Edit Password",
                                   style: TextStyle(
@@ -66,13 +69,12 @@ class _EditPasswordPageState extends State<EditPasswordPage> with BaseClass {
                                 context: context,
                                 leftMargin: Dimensions.pixels_30,
                                 isObscure: isOldPasswordShow,
-                                toggleObscure: (value){
+                                toggleObscure: (value) {
                                   setState(() {
-                                    if(value){
+                                    if (value) {
                                       isOldPasswordShow = false;
-                                    }
-                                    else{
-                                      isOldPasswordShow=true;
+                                    } else {
+                                      isOldPasswordShow = true;
                                     }
                                   });
                                 },
@@ -87,13 +89,12 @@ class _EditPasswordPageState extends State<EditPasswordPage> with BaseClass {
                                 leftMargin: Dimensions.pixels_30,
                                 isPassword: true,
                                 rightMargin: Dimensions.pixels_30,
-                                toggleObscure: (value){
+                                toggleObscure: (value) {
                                   setState(() {
-                                    if(value){
+                                    if (value) {
                                       isNewPasswordShow = false;
-                                    }
-                                    else{
-                                      isNewPasswordShow=true;
+                                    } else {
+                                      isNewPasswordShow = true;
                                     }
                                   });
                                 },
@@ -105,13 +106,12 @@ class _EditPasswordPageState extends State<EditPasswordPage> with BaseClass {
                                 leftMargin: Dimensions.pixels_30,
                                 isPassword: true,
                                 isObscure: isConfirmPasswordShow,
-                                toggleObscure: (value){
+                                toggleObscure: (value) {
                                   setState(() {
-                                    if(value){
+                                    if (value) {
                                       isConfirmPasswordShow = false;
-                                    }
-                                    else{
-                                      isConfirmPasswordShow=true;
+                                    } else {
+                                      isConfirmPasswordShow = true;
                                     }
                                   });
                                 },

@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 //import 'package:in_app_purchase/in_app_purchase.dart';
 
@@ -9,8 +7,7 @@ class InAppPurchasePage extends StatefulWidget {
 }
 
 class _InAppPurchasePageState extends State<InAppPurchasePage> {
-
- /* final String testId = "junior_year";
+  /* final String testId = "junior_year";
   final InAppPurchaseConnection _connection = InAppPurchaseConnection.instance;
    StreamSubscription<List<PurchaseDetails>> _subscription;
   List<String> _notFoundIds = [];

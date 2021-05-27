@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:kings_of_the_curve/providers/shared_preference_provider.dart';
-
 import 'package:kings_of_the_curve/utils/appColors.dart';
 import 'package:kings_of_the_curve/utils/appImages.dart';
 import 'package:kings_of_the_curve/utils/baseClass.dart';
 import 'package:kings_of_the_curve/utils/constantWidgets.dart';
 import 'package:kings_of_the_curve/utils/constantsValues.dart';
-import 'package:kings_of_the_curve/utils/size_config.dart';
 import 'package:kings_of_the_curve/utils/widget_dimensions.dart';
 import 'package:kings_of_the_curve/widgets/homeCardWidget.dart';
 import 'package:provider/provider.dart';
-
 import 'institution_leadership_pages/global_leaderboard_high_score_page.dart';
-import 'institution_leadership_pages/institution_leadership_high_score_page.dart';
 
 class EndLessLeaderShipModule extends StatefulWidget {
   @override
@@ -37,7 +33,7 @@ class _EndLessLeaderShipModuleState extends State<EndLessLeaderShipModule>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    getCustomAppBar(context, topMargin: appbarTopMargin),
+                    getCustomAppBar(context, topMargin: appBarTopMargin),
                     Container(
                       margin: EdgeInsets.only(
                           top: Dimensions.pixels_15,
@@ -99,7 +95,7 @@ class _EndLessLeaderShipModuleState extends State<EndLessLeaderShipModule>
                                   SizedBox(
                                     height: Dimensions.pixels_30,
                                   ),
-                    /*              HomeCardWidget(
+                                  /*              HomeCardWidget(
                                     cardHeight: Dimensions.pixels_160,
                                     leftMargin: Dimensions.pixels_30,
                                     rightMargin: Dimensions.pixels_30,
@@ -127,7 +123,8 @@ class _EndLessLeaderShipModuleState extends State<EndLessLeaderShipModule>
                             Align(
                               alignment: Alignment.bottomCenter,
                               child: Container(
-                                margin: EdgeInsets.only(top: Dimensions.pixels_51),
+                                margin:
+                                    EdgeInsets.only(top: Dimensions.pixels_51),
                                 child: Image(
                                   height: Dimensions.pixels_200,
                                   image: AssetImage(leader_background),

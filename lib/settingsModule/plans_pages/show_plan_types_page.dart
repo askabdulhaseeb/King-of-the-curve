@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kings_of_the_curve/utils/appColors.dart';
 import 'package:kings_of_the_curve/utils/widget_dimensions.dart';
-import 'package:kings_of_the_curve/widgets/rounded_edge_button.dart';
 
 class ShowPlanTypesPage extends StatelessWidget {
   @override
@@ -38,13 +37,13 @@ class ShowPlanTypesPage extends StatelessWidget {
                 _getPlanItems("No ads", true),
                 _getPlanItems("Leaderboards", true),
                 GestureDetector(
-                  onTap: (){
-
-                  },
+                  onTap: () {},
                   child: Container(
                     width: Dimensions.pixels_200,
                     height: Dimensions.pixels_45,
-                    margin: EdgeInsets.only(bottom: Dimensions.pixels_20, top: Dimensions.pixels_20),
+                    margin: EdgeInsets.only(
+                        bottom: Dimensions.pixels_20,
+                        top: Dimensions.pixels_20),
                     decoration: BoxDecoration(
                       color: lightGrey,
                       border: Border.all(
@@ -69,7 +68,8 @@ class ShowPlanTypesPage extends StatelessWidget {
             margin: EdgeInsets.only(
                 left: Dimensions.pixels_40,
                 right: Dimensions.pixels_40,
-                top: Dimensions.pixels_33,bottom: Dimensions.pixels_33),
+                top: Dimensions.pixels_33,
+                bottom: Dimensions.pixels_33),
             decoration: BoxDecoration(
               color: editButtonColor,
               borderRadius: BorderRadius.circular(Dimensions.pixels_8),
@@ -95,10 +95,10 @@ class ShowPlanTypesPage extends StatelessWidget {
                 Container(
                   width: Dimensions.pixels_200,
                   height: Dimensions.pixels_45,
-                  margin: EdgeInsets.only(bottom: Dimensions.pixels_20, top: Dimensions.pixels_20),
+                  margin: EdgeInsets.only(
+                      bottom: Dimensions.pixels_20, top: Dimensions.pixels_20),
                   decoration: BoxDecoration(
                     color: primaryColor,
-
                     borderRadius: BorderRadius.circular(Dimensions.pixels_4),
                   ),
                   child: Center(

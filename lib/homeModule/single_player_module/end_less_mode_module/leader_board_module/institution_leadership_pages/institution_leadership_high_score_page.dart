@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:kings_of_the_curve/utils/appColors.dart';
 import 'package:kings_of_the_curve/utils/appImages.dart';
+import 'package:kings_of_the_curve/utils/baseClass.dart';
 import 'package:kings_of_the_curve/utils/constantWidgets.dart';
 import 'package:kings_of_the_curve/utils/constantsValues.dart';
 import 'package:kings_of_the_curve/utils/widget_dimensions.dart';
 
-class InstitutionRankingPage extends StatelessWidget {
+import 'institution_leaderboard_ranking_page.dart';
+
+class InstitutionLeaderBoardHighScorePage extends StatelessWidget
+    with BaseClass {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,8 +24,8 @@ class InstitutionRankingPage extends StatelessWidget {
                 children: [
                   getCustomAppBarWithText(
                     context,
-                    "Florida Southern’s\nTop 100",
-                    topMargin: appbarTopMargin,
+                    "Institution High Score",
+                    topMargin: appBarTopMargin,
                   ),
                   SizedBox(
                     height: Dimensions.pixels_45,
@@ -77,35 +81,40 @@ class InstitutionRankingPage extends StatelessWidget {
                           bottom: Dimensions.pixels_51),
                       decoration: BoxDecoration(
                         borderRadius:
-                        BorderRadius.circular(Dimensions.pixels_15),
+                            BorderRadius.circular(Dimensions.pixels_15),
                         color: Colors.white,
                       ),
                       child: Stack(
                         fit: StackFit.expand,
                         children: [
                           Container(
-                            margin: EdgeInsets.only(bottom: Dimensions.pixels_60),
+                            margin:
+                                EdgeInsets.only(bottom: Dimensions.pixels_60),
                             child: ListView(
                               children: [
                                 _getScoreWidgets(
                                     userName: "Rutgers University",
                                     score: "100",
-                                    universityImage: score_one),
+                                    universityImage: score_one,
+                                    context: context),
                                 getDivider(),
                                 _getScoreWidgets(
                                     userName: "Rutgers University",
                                     score: "100",
-                                    universityImage: score_two),
+                                    universityImage: score_two,
+                                    context: context),
                                 getDivider(),
                                 _getScoreWidgets(
                                     userName: "Rutgers University",
                                     score: "100",
-                                    universityImage: score_three),
+                                    universityImage: score_three,
+                                    context: context),
                                 getDivider(),
                                 _getScoreWidgets(
                                     userName: "Rutgers University",
                                     score: "100",
-                                    universityImage: score_one),
+                                    universityImage: score_one,
+                                    context: context),
                                 getDivider(),
                               ],
                             ),
@@ -115,15 +124,17 @@ class InstitutionRankingPage extends StatelessWidget {
                             child: Container(
                               height: Dimensions.pixels_45,
                               width: Dimensions.pixels_200,
-                              margin: EdgeInsets.only(left: Dimensions.pixels_12,bottom: Dimensions.pixels_12),
+                              margin: EdgeInsets.only(
+                                  left: Dimensions.pixels_12,
+                                  bottom: Dimensions.pixels_12),
                               decoration: BoxDecoration(
                                 color: successLightColor,
                                 borderRadius:
-                                BorderRadius.circular(Dimensions.pixels_5),
+                                    BorderRadius.circular(Dimensions.pixels_5),
                               ),
                               child: Center(
                                 child: Text(
-                                  "You: 300th",
+                                  "Your Institution: 300th",
                                   style: TextStyle(
                                       color: successColor,
                                       fontSize: Dimensions.pixels_16,
@@ -164,58 +175,67 @@ class InstitutionRankingPage extends StatelessWidget {
   }
 
   Widget _getScoreWidgets(
-      {String score, String universityImage, String userName}) {
-    return Container(
-      margin: EdgeInsets.only(
-          left: Dimensions.pixels_15, right: Dimensions.pixels_15),
-      height: Dimensions.pixels_60,
-      child: Row(
-        children: [
-          Flexible(
-            flex: 1,
-            child: Container(
-              width: double.infinity,
-              alignment: Alignment.centerLeft,
+      {String score,
+      String universityImage,
+      String userName,
+      @required BuildContext context}) {
+    return GestureDetector(
+      onTap: () {
+        pushToNextScreenWithFadeAnimation(
+            context: context, destination: InstitutionRankingPage());
+      },
+      child: Container(
+        margin: EdgeInsets.only(
+            left: Dimensions.pixels_15, right: Dimensions.pixels_15),
+        height: Dimensions.pixels_60,
+        child: Row(
+          children: [
+            Flexible(
+              flex: 1,
               child: Container(
-                height: Dimensions.pixels_30,
-                width: Dimensions.pixels_30,
-                child: Image(
-                  image: AssetImage(universityImage),
+                width: double.infinity,
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  height: Dimensions.pixels_30,
+                  width: Dimensions.pixels_30,
+                  child: Image(
+                    image: AssetImage(universityImage),
+                  ),
                 ),
               ),
             ),
-          ),
-          Flexible(
-            flex: 1,
-            child: Container(
-              alignment: Alignment.centerRight,
-              margin: EdgeInsets.only(right: Dimensions.pixels_5),
-              width: double.infinity,
-              child: Text(
-                score,
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: Dimensions.pixels_16,
-                    fontWeight: FontWeight.w400),
+            Flexible(
+              flex: 1,
+              child: Container(
+                alignment: Alignment.centerRight,
+                margin: EdgeInsets.only(right: Dimensions.pixels_5),
+                width: double.infinity,
+                child: Text(
+                  score,
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: Dimensions.pixels_16,
+                      fontWeight: FontWeight.w400),
+                ),
               ),
             ),
-          ),
-          Flexible(
-            flex: 2,
-            child: Container(
-              width: double.infinity,
-              alignment: Alignment.centerRight,
-              margin: EdgeInsets.only(left: Dimensions.pixels_5),
-              child: Text(
-                userName,
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: Dimensions.pixels_14,
-                    fontWeight: FontWeight.w400),
+            Flexible(
+              flex: 2,
+              child: Container(
+                width: double.infinity,
+                alignment: Alignment.centerRight,
+                margin: EdgeInsets.only(left: Dimensions.pixels_5),
+                child: Text(
+                  userName,
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: Dimensions.pixels_14,
+                      fontWeight: FontWeight.w400),
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

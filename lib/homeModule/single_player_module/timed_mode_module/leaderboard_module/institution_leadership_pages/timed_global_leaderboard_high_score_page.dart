@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kings_of_the_curve/providers/leaderboard_provider.dart';
+import 'package:kings_of_the_curve/providers/leader_board_provider.dart';
 import 'package:kings_of_the_curve/providers/shared_preference_provider.dart';
 import 'package:kings_of_the_curve/utils/appColors.dart';
 import 'package:kings_of_the_curve/utils/appImages.dart';
@@ -26,9 +26,10 @@ class _TimedGlobalLeaderBoardHighScorePageState
   }
 
   static int myRankIndex = -1;
-int getRank(){
-  return myRankIndex ;
-}
+  int getRank() {
+    return myRankIndex;
+  }
+
   @override
   Widget build(BuildContext context) {
     var leaderBoardProvider = Provider.of<LeaderBoardProvider>(context);
@@ -58,7 +59,7 @@ int getRank(){
                         getCustomAppBarWithText(
                           context,
                           "Global High Score",
-                          topMargin: appbarTopMargin,
+                          topMargin: appBarTopMargin,
                         ),
                         SizedBox(
                           height: Dimensions.pixels_45,
@@ -124,18 +125,24 @@ int getRank(){
                                   margin: EdgeInsets.only(
                                       bottom: Dimensions.pixels_60),
                                   child: ListView.builder(
-                                      itemCount:
-                                          leaderBoardProvider.timedModeUsersList.length,
+                                      itemCount: leaderBoardProvider
+                                          .timedModeUsersList.length,
                                       itemBuilder: (_, int index) {
                                         return Column(
                                           children: [
                                             _getScoreWidgets(
-                                                userName: leaderBoardProvider.timedModeUsersList
-                                                    .elementAt(index)
-                                                    .userName!=null?leaderBoardProvider.timedModeUsersList
-                                                    .elementAt(index)
-                                                    .userName:"",
-                                                score: leaderBoardProvider.timedModeUsersList
+                                                userName: leaderBoardProvider
+                                                            .timedModeUsersList
+                                                            .elementAt(index)
+                                                            .userName !=
+                                                        null
+                                                    ? leaderBoardProvider
+                                                        .timedModeUsersList
+                                                        .elementAt(index)
+                                                        .userName
+                                                    : "",
+                                                score: leaderBoardProvider
+                                                    .timedModeUsersList
                                                     .elementAt(index)
                                                     .timedModeHighScore,
                                                 universityImage: index == 0
@@ -144,7 +151,9 @@ int getRank(){
                                                         ? second_place
                                                         : third_place,
                                                 position: index),
-                                            getDivider(dividerColor: Colors.grey.shade200),
+                                            getDivider(
+                                                dividerColor:
+                                                    Colors.grey.shade200),
                                           ],
                                         );
                                       }),
@@ -185,24 +194,21 @@ int getRank(){
             ),
     );
   }
-  String getTrailingString(int rank){
-    if(rank ==0){
+
+  String getTrailingString(int rank) {
+    if (rank == 0) {
       return "";
-    }
-    else if(rank ==1){
+    } else if (rank == 1) {
       return "st";
-    }
-    else if(rank ==2){
+    } else if (rank == 2) {
       return "nd";
-    }
-    else if(rank ==3){
+    } else if (rank == 3) {
       return "rd";
-    }
-    else {
+    } else {
       return "th";
     }
-
   }
+
   Widget _getTabBarItem(String title) {
     return Column(
       children: [

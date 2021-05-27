@@ -32,7 +32,7 @@ class _ReviewSeeAnswersPageState extends State<ReviewSeeAnswersPage>
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              getCustomAppBar(context, topMargin: appbarTopMargin),
+              getCustomAppBar(context, topMargin: appBarTopMargin),
               Container(
                 margin: EdgeInsets.only(
                     top: Dimensions.pixels_15, left: Dimensions.pixels_30),
@@ -149,7 +149,9 @@ class _ReviewSeeAnswersPageState extends State<ReviewSeeAnswersPage>
                             fourQuestionModel,
                             sharedPreferenceProvider.userDataModel.userId);
                         popToPreviousScreen(context: context);
-                        reviewQuestionProvider.addQuestionsToList(fourQuestionModel,context);
+                        reviewQuestionProvider.addQuestionsToList(
+                            fourQuestionModel, context);
+
                         /// add locally
                         setState(() {});
                       }

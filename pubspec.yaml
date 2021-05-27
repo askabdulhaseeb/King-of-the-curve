@@ -12,11 +12,11 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.2
-  url_launcher: ^6.0.3
+  cupertino_icons: ^1.0.3
+  url_launcher: ^6.0.4
   provider: ^5.0.0
   flutter_login_facebook: ^1.0.1
-  firebase_auth: ^1.0.3
+  firebase_auth: ^1.2.0
   google_api_availability: ^3.0.1
   google_sign_in: ^5.0.1
   cloud_firestore: ^1.0.4
@@ -24,7 +24,7 @@ dependencies:
   firebase_auth_web: ^1.0.5
   csv: ^5.0.0
   flutter_rating_bar: ^4.0.0
-  shared_preferences: ^2.0.5
+  shared_preferences: ^2.0.6
   flutter_styled_toast: ^2.0.0
   apple_sign_in: ^0.1.0
   bouncing_widget: ^2.0.0

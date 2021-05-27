@@ -10,9 +10,9 @@ class RemainingLifeCountProvider with ChangeNotifier, BaseClass {
 
   int get getRemainingLivesCount => _remainingLife;
 
-  void subtractLife(int lifeTobeSubtracted) {
+  void subtractLife(int lifeToBeSubtracted) {
     if (_remainingLife > 0) {
-      _remainingLife -= lifeTobeSubtracted;
+      _remainingLife -= lifeToBeSubtracted;
       notifyListeners();
     }
   }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kings_of_the_curve/homeModule/single_player_module/end_less_mode_module/endless_mode_play/question_withanswer_option_widget.dart';
-import 'package:kings_of_the_curve/homeModule/single_player_module/game_over_module/game_over_page.dart';
+import 'package:kings_of_the_curve/homeModule/single_player_module/end_less_mode_module/endless_mode_play/question_with_answer_option_widget.dart';
 import 'package:kings_of_the_curve/homeModule/single_player_module/game_over_module/timed_game_over_page.dart';
 import 'package:kings_of_the_curve/providers/four_questions_provider.dart';
 import 'package:kings_of_the_curve/utils/appColors.dart';
@@ -36,8 +35,8 @@ class _QuestionsPageTimedModeState extends State<QuestionsPageTimedMode>
         pushToNextScreenWithFadeAnimation(
           context: context,
           destination: TimedGameOverPage(
-            /*isEndlessMode: false,*/
-          ),
+              /*isEndlessMode: false,*/
+              ),
         );
         /*pushToNextScreenWithFadeAnimation(
           context: context,
@@ -49,8 +48,6 @@ class _QuestionsPageTimedModeState extends State<QuestionsPageTimedMode>
       fourQuestionsProvider.cancelTimerStatus();
     }
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +69,7 @@ class _QuestionsPageTimedModeState extends State<QuestionsPageTimedMode>
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(
-                    height: appbarTopMargin,
+                    height: appBarTopMargin,
                   ),
                   Container(
                     margin: EdgeInsets.only(
@@ -119,8 +116,8 @@ class _QuestionsPageTimedModeState extends State<QuestionsPageTimedMode>
                             pushToNextScreenWithFadeAnimation(
                               context: context,
                               destination: TimedGameOverPage(
-                                /*isEndlessMode: false,*/
-                              ),
+                                  /*isEndlessMode: false,*/
+                                  ),
                             );
                           },
                           child: Container(
@@ -222,7 +219,7 @@ class _QuestionsPageTimedModeState extends State<QuestionsPageTimedMode>
                       child: QuestionAnswerOptionsWidget(
                         question:
                             fourQuestionsProvider.getCurrentQuestion.question,
-                      /*  answerOne:
+                        /*  answerOne:
                             fourQuestionsProvider.getCurrentQuestion.optionOne,
                         answerTwo:
                             fourQuestionsProvider.getCurrentQuestion.optionTwo,

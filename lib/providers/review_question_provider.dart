@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:kings_of_the_curve/homeModule/single_player_module/game_over_module/review_mode_gameover.dart';
-import 'package:kings_of_the_curve/homeModule/single_player_module/game_over_module/timed_game_over_page.dart';
 import 'package:kings_of_the_curve/models/question_with_answers_model.dart';
 import 'package:kings_of_the_curve/services/firestore_service.dart';
 import 'package:kings_of_the_curve/utils/appColors.dart';

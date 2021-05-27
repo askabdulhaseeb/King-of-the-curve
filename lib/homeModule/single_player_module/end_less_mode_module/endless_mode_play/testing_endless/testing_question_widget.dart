@@ -1,13 +1,10 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:bouncing_widget/bouncing_widget.dart';
-import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:kings_of_the_curve/models/question_with_answers_model.dart';
 import 'package:kings_of_the_curve/providers/question_provider.dart';
 import 'package:kings_of_the_curve/providers/review_question_provider.dart';
 import 'package:kings_of_the_curve/utils/appColors.dart';
 import 'package:kings_of_the_curve/utils/widget_dimensions.dart';
-import 'package:photo_view/photo_view.dart';
 import 'package:provider/provider.dart';
 
 class TestingQuestionWidget extends StatefulWidget {
@@ -140,7 +137,6 @@ class _TestingQuestionWidgetState extends State<TestingQuestionWidget> {
                   SizedBox(
                     height: Dimensions.pixels_10,
                   ),
-
                 ],
               );
             }),

@@ -96,7 +96,7 @@ class _TimedModeQuestionAnswerPageState
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           SizedBox(
-                            height: appbarTopMargin,
+                            height: appBarTopMargin,
                           ),
                           Container(
                             margin: EdgeInsets.only(

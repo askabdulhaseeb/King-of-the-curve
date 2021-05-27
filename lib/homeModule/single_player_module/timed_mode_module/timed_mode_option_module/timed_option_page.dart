@@ -16,7 +16,7 @@ class TimedOptionPage extends StatefulWidget {
   _TimedOptionPageState createState() => _TimedOptionPageState();
 }
 
-class _TimedOptionPageState extends State<TimedOptionPage> with BaseClass{
+class _TimedOptionPageState extends State<TimedOptionPage> with BaseClass {
   @override
   void initState() {
     // TODO: implement initState
@@ -54,7 +54,7 @@ class _TimedOptionPageState extends State<TimedOptionPage> with BaseClass{
             ? Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  getCustomAppBar(context, topMargin: appbarTopMargin),
+                  getCustomAppBar(context, topMargin: appBarTopMargin),
                   Container(
                     margin: EdgeInsets.only(
                         top: Dimensions.pixels_15, left: Dimensions.pixels_30),
@@ -100,44 +100,46 @@ class _TimedOptionPageState extends State<TimedOptionPage> with BaseClass{
                                     rightMargin: Dimensions.pixels_30,
                                     cardRadius: Dimensions.pixels_15,
                                     onCategoryCheckboxTap: (value) {
-                                      if(sharePrefProvider.userDataModel.isPremium) {
+                                      if (sharePrefProvider
+                                          .userDataModel.isPremium) {
                                         if (optionProvider
                                             .getAsyncTimedOptionList
                                             .elementAt(index)
                                             .isCategorySelected) {
                                           optionProvider
                                               .changeTimedCategoryStatus(
-                                              optionProvider
-                                                  .getAsyncTimedOptionList
-                                                  .elementAt(index)
-                                                  .isCategorySelected,
-                                              optionProvider
-                                                  .getAsyncTimedOptionList
-                                                  .elementAt(index)
-                                                  .categoryDocumentId,
-                                              context,
-                                              sharePrefProvider
-                                                  .userDataModel.userId,
-                                              index);
+                                                  optionProvider
+                                                      .getAsyncTimedOptionList
+                                                      .elementAt(index)
+                                                      .isCategorySelected,
+                                                  optionProvider
+                                                      .getAsyncTimedOptionList
+                                                      .elementAt(index)
+                                                      .categoryDocumentId,
+                                                  context,
+                                                  sharePrefProvider
+                                                      .userDataModel.userId,
+                                                  index);
                                           setState(() {});
                                         } else {
                                           optionProvider
                                               .changeTimedCategoryStatus(
-                                              optionProvider
-                                                  .getAsyncTimedOptionList
-                                                  .elementAt(index)
-                                                  .isCategorySelected,
-                                              optionProvider
-                                                  .getAsyncTimedOptionList
-                                                  .elementAt(index)
-                                                  .categoryDocumentId,
-                                              context,
-                                              sharePrefProvider
-                                                  .userDataModel.userId,
-                                              index);
+                                                  optionProvider
+                                                      .getAsyncTimedOptionList
+                                                      .elementAt(index)
+                                                      .isCategorySelected,
+                                                  optionProvider
+                                                      .getAsyncTimedOptionList
+                                                      .elementAt(index)
+                                                      .categoryDocumentId,
+                                                  context,
+                                                  sharePrefProvider
+                                                      .userDataModel.userId,
+                                                  index);
                                         }
-                                      }else{
-                                        showError(context, "Upgrade to premium to select or unselect categories ");
+                                      } else {
+                                        showError(context,
+                                            "Upgrade to premium to select or unselect categories ");
                                       }
                                     },
                                     onCardClicked: (value) {
@@ -311,7 +313,7 @@ class _TimedOptionPageState extends State<TimedOptionPage> with BaseClass{
   }
 
   Widget _getSubCategoryOptionWidget(
-      TImedSubCatList list,
+      TimedSubCatList list,
       OptionProvider optionProvider,
       SharedPreferenceProvider sharePrefProvider,
       int categoryIndex) {
@@ -333,7 +335,7 @@ class _TimedOptionPageState extends State<TimedOptionPage> with BaseClass{
         ),
         GestureDetector(
           onTap: () {
-            if(sharePrefProvider.userDataModel.isPremium) {
+            if (sharePrefProvider.userDataModel.isPremium) {
               if (list.isSubCatSelected) {
                 optionProvider.changeTimedSubCategoryStatus(
                   list.isSubCatSelected,
@@ -358,8 +360,9 @@ class _TimedOptionPageState extends State<TimedOptionPage> with BaseClass{
                         .subCategoryList
                         .indexOf(list));
               }
-            }else{
-              showError(context, "Upgrade to premium to select or unselect sub categories ");
+            } else {
+              showError(context,
+                  "Upgrade to premium to select or unselect sub categories ");
             }
           },
           child: Container(

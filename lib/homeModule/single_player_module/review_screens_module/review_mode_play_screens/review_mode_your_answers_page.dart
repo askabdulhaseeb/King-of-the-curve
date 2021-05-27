@@ -20,7 +20,7 @@ class YourAnswersReviewMode extends StatelessWidget with BaseClass {
                   child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  getCustomAppBar(context, topMargin: appbarTopMargin),
+                  getCustomAppBar(context, topMargin: appBarTopMargin),
                   Container(
                     margin: EdgeInsets.only(
                         top: Dimensions.pixels_15, left: Dimensions.pixels_30),

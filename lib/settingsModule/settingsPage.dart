@@ -1,16 +1,13 @@
 import 'dart:async';
 import 'dart:io';
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_inapp_purchase/flutter_inapp_purchase.dart';
-import 'package:in_app_purchase/in_app_purchase.dart';
-import 'package:kings_of_the_curve/authentification/loginPage.dart';
+import 'package:kings_of_the_curve/authentication/loginPage.dart';
 import 'package:kings_of_the_curve/blocs/auth_bloc.dart';
 import 'package:kings_of_the_curve/providers/question_provider.dart';
 import 'package:kings_of_the_curve/providers/shared_preference_provider.dart';
 import 'package:kings_of_the_curve/settingsModule/accountDetailsPage.dart';
-import 'package:kings_of_the_curve/settingsModule/plans_pages/choose_a_plan_base_page.dart';
 import 'package:kings_of_the_curve/utils/appColors.dart';
 import 'package:kings_of_the_curve/utils/appImages.dart';
 import 'package:kings_of_the_curve/utils/baseClass.dart';
@@ -20,7 +17,6 @@ import 'package:kings_of_the_curve/utils/widget_dimensions.dart';
 import 'package:kings_of_the_curve/widgets/settingsOptionWidget.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import 'my_stats_page.dart';
 import 'package:kings_of_the_curve/homeModule/single_player_module/end_less_mode_module/endless_mode_play/endless_mode_your_answers_page.dart';
 
@@ -33,12 +29,12 @@ class _SettingsPageState extends State<SettingsPage> with BaseClass {
   double sizedBoxHeight = Dimensions.pixels_20;
   final String iapId = "single_month_subscription";
   final String iapId2 = "twelve_month_subscription";
-  final String iapId3 = "six_month_subsciption";
+  final String iapId3 = "six_month_subscription";
   List<IAPItem> _items = [];
 
   StreamSubscription _purchaseUpdatedSubscription;
   StreamSubscription _purchaseErrorSubscription;
-  StreamSubscription _conectionSubscription;
+  StreamSubscription _connectionSubscription;
 
   /*@override
   void initState() {
@@ -65,7 +61,7 @@ class _SettingsPageState extends State<SettingsPage> with BaseClass {
             print("ONE MONTH");
           } else if (purchaseDetails.productID == "twelve_month_subscription") {
             print("YEAR");
-          } else if (purchaseDetails.productID == "six_month_subsciption") {
+          } else if (purchaseDetails.productID == "six_month_subscription") {
             print("6 months");
           }
           */ /*    bool valid = await _verifyPurchase(purchaseDetails);
@@ -106,7 +102,7 @@ class _SettingsPageState extends State<SettingsPage> with BaseClass {
 
   final String iapId = "single_month_subscription";
   final String iapId2 = "twelve_month_subscription";
-  final String iapId3 = "six_month_subsciption";
+  final String iapId3 = "six_month_subscription";
 
   StreamSubscription<List<PurchaseDetails>> _subscription;
 
@@ -151,7 +147,6 @@ class _SettingsPageState extends State<SettingsPage> with BaseClass {
 
   @override
   void initState() {
-    // TODO: implement initState
     final sharedPref =
         Provider.of<SharedPreferenceProvider>(context, listen: false);
     final questionProvider =
@@ -191,14 +186,14 @@ class _SettingsPageState extends State<SettingsPage> with BaseClass {
         print('consumeAllItems error: $err');
       }
 
-      _conectionSubscription =
+      _connectionSubscription =
           FlutterInappPurchase.connectionUpdated.listen((connected) {
         print('connected: $connected');
       });
 
       _purchaseUpdatedSubscription =
           FlutterInappPurchase.purchaseUpdated.listen((productItem) {
-        print("ANDROIDDDDD" + productItem.dataAndroid.toString());
+        print("ANDROID" + productItem.dataAndroid.toString());
         print('purchase-updated: ${productItem.transactionId}');
         print('purchase-updated: ${productItem.transactionDate}');
 
@@ -214,7 +209,7 @@ class _SettingsPageState extends State<SettingsPage> with BaseClass {
               productItem.transactionDate,
               DateTime.now().copyWithAdditional(years: 0, months: 12));
           print(DateTime.now().copyWithAdditional(years: 0, months: 12));
-        } else if (productItem.productId == "six_month_subsciption") {
+        } else if (productItem.productId == "six_month_subscription") {
           _questionProvider.switchToPremium(
               productItem.transactionId,
               productItem.transactionDate,
@@ -266,9 +261,9 @@ class _SettingsPageState extends State<SettingsPage> with BaseClass {
       _purchaseUpdatedSubscription.cancel();
       _purchaseUpdatedSubscription = null;
     }
-    if (_conectionSubscription != null) {
-      _conectionSubscription.cancel();
-      _conectionSubscription = null;
+    if (_connectionSubscription != null) {
+      _connectionSubscription.cancel();
+      _connectionSubscription = null;
     }
   }
 
@@ -559,7 +554,7 @@ class _SettingsPageState extends State<SettingsPage> with BaseClass {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    getCustomAppBar(context, topMargin: appbarTopMargin),
+                    getCustomAppBar(context, topMargin: appBarTopMargin),
                     Container(
                       margin: EdgeInsets.only(
                           top: Dimensions.pixels_15,
@@ -751,7 +746,7 @@ class _SettingsPageState extends State<SettingsPage> with BaseClass {
                                       height: sizedBoxHeight,
                                     ),
                                     getDivider(),*/
-                                /*    SizedBox(
+                                    /*    SizedBox(
                                       height: sizedBoxHeight,
                                     ),
                                     SettingsOptionWidget(
@@ -763,7 +758,7 @@ class _SettingsPageState extends State<SettingsPage> with BaseClass {
                                           : "Rate in the Play Store",
                                       onClickOption: () {},
                                     ),*/
-                                   /* SizedBox(
+                                    /* SizedBox(
                                       height: sizedBoxHeight,
                                     ),
                                     getDivider(),

@@ -21,7 +21,7 @@ class InstitutionRankingPage extends StatelessWidget {
                   getCustomAppBarWithText(
                     context,
                     "Florida Southern’s\nTop 100",
-                    topMargin: appbarTopMargin,
+                    topMargin: appBarTopMargin,
                   ),
                   SizedBox(
                     height: Dimensions.pixels_45,
@@ -77,14 +77,15 @@ class InstitutionRankingPage extends StatelessWidget {
                           bottom: Dimensions.pixels_51),
                       decoration: BoxDecoration(
                         borderRadius:
-                        BorderRadius.circular(Dimensions.pixels_15),
+                            BorderRadius.circular(Dimensions.pixels_15),
                         color: Colors.white,
                       ),
                       child: Stack(
                         fit: StackFit.expand,
                         children: [
                           Container(
-                            margin: EdgeInsets.only(bottom: Dimensions.pixels_60),
+                            margin:
+                                EdgeInsets.only(bottom: Dimensions.pixels_60),
                             child: ListView(
                               children: [
                                 _getScoreWidgets(
@@ -115,11 +116,13 @@ class InstitutionRankingPage extends StatelessWidget {
                             child: Container(
                               height: Dimensions.pixels_45,
                               width: Dimensions.pixels_200,
-                              margin: EdgeInsets.only(left: Dimensions.pixels_12,bottom: Dimensions.pixels_12),
+                              margin: EdgeInsets.only(
+                                  left: Dimensions.pixels_12,
+                                  bottom: Dimensions.pixels_12),
                               decoration: BoxDecoration(
                                 color: successLightColor,
                                 borderRadius:
-                                BorderRadius.circular(Dimensions.pixels_5),
+                                    BorderRadius.circular(Dimensions.pixels_5),
                               ),
                               child: Center(
                                 child: Text(

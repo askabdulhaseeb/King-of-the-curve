@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kings_of_the_curve/homeModule/single_player_module/end_less_mode_module/endless_mode_play/endless_mode_your_answers_page.dart';
 import 'package:kings_of_the_curve/homeModule/single_player_module/review_screens_module/review_mode_play_screens/review_mode_see_answers.dart';
 import 'package:kings_of_the_curve/providers/four_questions_provider.dart';
 import 'package:kings_of_the_curve/providers/options_provider.dart';
-import 'package:kings_of_the_curve/providers/question_provider.dart';
 import 'package:kings_of_the_curve/providers/review_question_provider.dart';
 import 'package:kings_of_the_curve/providers/shared_preference_provider.dart';
 import 'package:kings_of_the_curve/utils/appColors.dart';
@@ -34,7 +32,8 @@ class _ReviewModeGameOverState extends State<ReviewModeGameOver>
   @override
   Widget build(BuildContext context) {
     var fourQuestionsProvider = Provider.of<FourQuestionsProvider>(context);
-    var reviewModeQuestionProvider = Provider.of<ReviewQuestionProvider>(context);
+    var reviewModeQuestionProvider =
+        Provider.of<ReviewQuestionProvider>(context);
     var sharePrefProvider = Provider.of<SharedPreferenceProvider>(context);
     var optionProvider = Provider.of<OptionProvider>(context);
 
@@ -44,15 +43,14 @@ class _ReviewModeGameOverState extends State<ReviewModeGameOver>
       optionProvider.setUserReviewHighScore(
           reviewModeQuestionProvider.getCorrectAnswersCount.toString(),
           sharePrefProvider.userDataModel.userId);
-      highestScore = reviewModeQuestionProvider.getCorrectAnswersCount.toString();
+      highestScore =
+          reviewModeQuestionProvider.getCorrectAnswersCount.toString();
     } else {
       highestScore = sharePrefProvider.userDataModel.reviewModeHighScore;
     }
     return WillPopScope(
       onWillPop: () async {
-
-        reviewModeQuestionProvider
-            .clearAnsweredQuestionsList();
+        reviewModeQuestionProvider.clearAnsweredQuestionsList();
         reviewModeQuestionProvider.setNewQuestion();
         // remainingCount.resetLife();
         popToPreviousScreen(context: context);
@@ -72,7 +70,7 @@ class _ReviewModeGameOverState extends State<ReviewModeGameOver>
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       SizedBox(
-                        height: appbarTopMargin,
+                        height: appBarTopMargin,
                       ),
                       Container(
                         margin: EdgeInsets.only(
@@ -92,7 +90,8 @@ class _ReviewModeGameOverState extends State<ReviewModeGameOver>
                           fit: StackFit.expand,
                           children: [
                             Container(
-                              margin: EdgeInsets.only(top: Dimensions.pixels_128),
+                              margin:
+                                  EdgeInsets.only(top: Dimensions.pixels_128),
                               decoration: getScreenBackgroundDecoration(),
                             ),
                             Container(
@@ -103,8 +102,10 @@ class _ReviewModeGameOverState extends State<ReviewModeGameOver>
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(Dimensions.pixels_10),
-                                  topRight: Radius.circular(Dimensions.pixels_10),
+                                  topLeft:
+                                      Radius.circular(Dimensions.pixels_10),
+                                  topRight:
+                                      Radius.circular(Dimensions.pixels_10),
                                 ),
                               ),
                               child: Column(
@@ -140,11 +141,10 @@ class _ReviewModeGameOverState extends State<ReviewModeGameOver>
                                       buttonRadius: 0,
                                       textColor: Colors.white,
                                       onPressed: (value) {
-
                                         reviewModeQuestionProvider
                                             .clearAnsweredQuestionsList();
-                                        reviewModeQuestionProvider.setNewQuestion();
-
+                                        reviewModeQuestionProvider
+                                            .setNewQuestion();
 
                                         Navigator.pop(context);
                                       },
@@ -178,8 +178,8 @@ class _ReviewModeGameOverState extends State<ReviewModeGameOver>
                                       onPressed: (value) {
                                         reviewModeQuestionProvider
                                             .clearAnsweredQuestionsList();
-                                        reviewModeQuestionProvider.setNewQuestion();
-
+                                        reviewModeQuestionProvider
+                                            .setNewQuestion();
 
                                         // remainingCount.resetLife();
                                         int count = 0;

@@ -1,19 +1,17 @@
 import 'dart:convert';
 import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:kings_of_the_curve/utils/progress_dialog.dart';
-import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:kings_of_the_curve/utils/widget_dimensions.dart';
 
 mixin BaseClass {
   final String _securityKey = "track@0#-129";
 
-  // Makes a screen to potrait only
-  // implement in main class to make the whole app in potrait mode
+  // Makes a screen to portrait only
+  // implement in main class to make the whole app in portrait mode
   void portraitModeOnly() {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
@@ -302,7 +300,4 @@ mixin BaseClass {
       return false;
     }
   }
-
-
-
 }

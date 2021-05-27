@@ -14,9 +14,7 @@ class ChooseAPlanPage extends StatefulWidget {
 class _ChooseAPlanPageState extends State<ChooseAPlanPage> {
   bool isPlanSelected = true;
 
-  void onPlanSelected(bool isBasicSelected, BuildContext context) {
-
-  }
+  void onPlanSelected(bool isBasicSelected, BuildContext context) {}
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +29,7 @@ class _ChooseAPlanPageState extends State<ChooseAPlanPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    getCustomAppBar(context, topMargin: appbarTopMargin),
+                    getCustomAppBar(context, topMargin: appBarTopMargin),
                     Container(
                       margin: EdgeInsets.only(
                           top: Dimensions.pixels_15,

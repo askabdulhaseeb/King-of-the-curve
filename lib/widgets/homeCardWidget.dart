@@ -1,6 +1,5 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:kings_of_the_curve/utils/appColors.dart';
 import 'package:kings_of_the_curve/utils/widget_dimensions.dart';
 
 class HomeCardWidget extends StatelessWidget {
@@ -78,7 +77,8 @@ class HomeCardWidget extends StatelessWidget {
                   image: AssetImage(
                     cardTrailingImage,
                   ),
-                  height: isCustomHeight? Dimensions.pixels_50:double.infinity,
+                  height:
+                      isCustomHeight ? Dimensions.pixels_50 : double.infinity,
                   width: Dimensions.pixels_70,
                 ),
               ),

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:kings_of_the_curve/utils/appColors.dart';
 import 'package:kings_of_the_curve/utils/appImages.dart';
@@ -9,7 +8,8 @@ import 'package:kings_of_the_curve/utils/widget_dimensions.dart';
 
 import 'institution_leaderboard_ranking_page.dart';
 
-class InstitutionLeaderBoardHighScorePage extends StatelessWidget with BaseClass{
+class InstitutionLeaderBoardHighScorePage extends StatelessWidget
+    with BaseClass {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +25,7 @@ class InstitutionLeaderBoardHighScorePage extends StatelessWidget with BaseClass
                   getCustomAppBarWithText(
                     context,
                     "Institution High Score",
-                    topMargin: appbarTopMargin,
+                    topMargin: appBarTopMargin,
                   ),
                   SizedBox(
                     height: Dimensions.pixels_45,
@@ -81,35 +81,40 @@ class InstitutionLeaderBoardHighScorePage extends StatelessWidget with BaseClass
                           bottom: Dimensions.pixels_51),
                       decoration: BoxDecoration(
                         borderRadius:
-                        BorderRadius.circular(Dimensions.pixels_15),
+                            BorderRadius.circular(Dimensions.pixels_15),
                         color: Colors.white,
                       ),
                       child: Stack(
                         fit: StackFit.expand,
                         children: [
                           Container(
-                            margin: EdgeInsets.only(bottom: Dimensions.pixels_60),
+                            margin:
+                                EdgeInsets.only(bottom: Dimensions.pixels_60),
                             child: ListView(
                               children: [
                                 _getScoreWidgets(
                                     userName: "Rutgers University",
                                     score: "100",
-                                    universityImage: score_one,context: context),
+                                    universityImage: score_one,
+                                    context: context),
                                 getDivider(),
                                 _getScoreWidgets(
                                     userName: "Rutgers University",
                                     score: "100",
-                                    universityImage: score_two,context: context),
+                                    universityImage: score_two,
+                                    context: context),
                                 getDivider(),
                                 _getScoreWidgets(
                                     userName: "Rutgers University",
                                     score: "100",
-                                    universityImage: score_three,context: context),
+                                    universityImage: score_three,
+                                    context: context),
                                 getDivider(),
                                 _getScoreWidgets(
                                     userName: "Rutgers University",
                                     score: "100",
-                                    universityImage: score_one,context: context),
+                                    universityImage: score_one,
+                                    context: context),
                                 getDivider(),
                               ],
                             ),
@@ -119,11 +124,13 @@ class InstitutionLeaderBoardHighScorePage extends StatelessWidget with BaseClass
                             child: Container(
                               height: Dimensions.pixels_45,
                               width: Dimensions.pixels_200,
-                              margin: EdgeInsets.only(left: Dimensions.pixels_12,bottom: Dimensions.pixels_12),
+                              margin: EdgeInsets.only(
+                                  left: Dimensions.pixels_12,
+                                  bottom: Dimensions.pixels_12),
                               decoration: BoxDecoration(
                                 color: successLightColor,
                                 borderRadius:
-                                BorderRadius.circular(Dimensions.pixels_5),
+                                    BorderRadius.circular(Dimensions.pixels_5),
                               ),
                               child: Center(
                                 child: Text(
@@ -168,10 +175,14 @@ class InstitutionLeaderBoardHighScorePage extends StatelessWidget with BaseClass
   }
 
   Widget _getScoreWidgets(
-      {String score, String universityImage, String userName,@required BuildContext context}) {
+      {String score,
+      String universityImage,
+      String userName,
+      @required BuildContext context}) {
     return GestureDetector(
-      onTap: (){
-        pushToNextScreenWithFadeAnimation(context: context, destination: InstitutionRankingPage());
+      onTap: () {
+        pushToNextScreenWithFadeAnimation(
+            context: context, destination: InstitutionRankingPage());
       },
       child: Container(
         margin: EdgeInsets.only(

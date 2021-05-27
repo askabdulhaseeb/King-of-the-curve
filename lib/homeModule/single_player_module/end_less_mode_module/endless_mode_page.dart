@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kings_of_the_curve/homeModule/single_player_module/end_less_mode_module/endless_mode_play/endless_mode_questions_page.dart';
-import 'package:kings_of_the_curve/homeModule/single_player_module/end_less_mode_module/endless_mode_play/endless_mode_your_answers_page.dart';
-import 'package:kings_of_the_curve/homeModule/single_player_module/options_module/options_page.dart';
 import 'package:kings_of_the_curve/homeModule/testing_files/optionTesting.dart';
 import 'package:kings_of_the_curve/utils/appColors.dart';
 import 'package:kings_of_the_curve/utils/appImages.dart';
@@ -10,10 +7,8 @@ import 'package:kings_of_the_curve/utils/constantWidgets.dart';
 import 'package:kings_of_the_curve/utils/constantsValues.dart';
 import 'package:kings_of_the_curve/utils/widget_dimensions.dart';
 import 'package:kings_of_the_curve/widgets/homeCardWidget.dart';
-import 'package:kings_of_the_curve/widgets/card_widget_with_hint.dart';
-
 import 'endless_mode_play/testing_endless/endless_mode_questons_answer_page.dart';
-import 'leaderboard_module/end_less_leadership_page.dart';
+import 'leader_board_module/end_less_leadership_page.dart';
 
 class EndlessModePage extends StatefulWidget {
   @override
@@ -35,7 +30,7 @@ class _EndlessModePageState extends State<EndlessModePage> with BaseClass {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    getCustomAppBar(context, topMargin: appbarTopMargin),
+                    getCustomAppBar(context, topMargin: appBarTopMargin),
                     Container(
                       margin: EdgeInsets.only(
                           top: Dimensions.pixels_15,

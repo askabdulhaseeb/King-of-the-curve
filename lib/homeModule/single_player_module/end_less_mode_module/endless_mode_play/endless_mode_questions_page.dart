@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:kings_of_the_curve/homeModule/single_player_module/end_less_mode_module/endless_mode_play/question_withanswer_option_widget.dart';
+import 'package:kings_of_the_curve/homeModule/single_player_module/end_less_mode_module/endless_mode_play/question_with_answer_option_widget.dart';
 import 'package:kings_of_the_curve/homeModule/single_player_module/game_over_module/endless_game_over_page.dart';
-import 'package:kings_of_the_curve/homeModule/single_player_module/game_over_module/game_over_page.dart';
 import 'package:kings_of_the_curve/providers/four_questions_provider.dart';
-import 'package:kings_of_the_curve/providers/remianing_life_count_provider.dart';
+import 'package:kings_of_the_curve/providers/remaining_life_count_provider.dart';
 import 'package:kings_of_the_curve/utils/appColors.dart';
-import 'package:kings_of_the_curve/utils/appImages.dart';
 import 'package:kings_of_the_curve/utils/baseClass.dart';
 import 'package:kings_of_the_curve/utils/constantWidgets.dart';
 import 'package:kings_of_the_curve/utils/constantsValues.dart';
 import 'package:kings_of_the_curve/utils/widget_dimensions.dart';
 import 'package:provider/provider.dart';
-
-import 'endless_mode_your_answers_page.dart';
 
 class QuestionsPageEndlessMode extends StatefulWidget {
   @override
@@ -43,7 +39,7 @@ class _QuestionsPageEndlessModeState extends State<QuestionsPageEndlessMode>
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(
-                    height: appbarTopMargin,
+                    height: appBarTopMargin,
                   ),
                   Container(
                     margin: EdgeInsets.only(
@@ -195,7 +191,7 @@ class _QuestionsPageEndlessModeState extends State<QuestionsPageEndlessMode>
                         child: QuestionAnswerOptionsWidget(
                           question:
                               fourQuestionsProvider.getCurrentQuestion.question,
-                     /*     answerOne: fourQuestionsProvider
+                          /*     answerOne: fourQuestionsProvider
                               .getCurrentQuestion.optionOne,
                           answerTwo: fourQuestionsProvider
                               .getCurrentQuestion.optionTwo,

@@ -1,10 +1,9 @@
 import 'dart:async';
 import 'dart:io';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:kings_of_the_curve/authentification/forgotPasswordPage.dart';
-import 'package:kings_of_the_curve/authentification/registerPage.dart';
+import 'package:kings_of_the_curve/authentication/forgotPasswordPage.dart';
+import 'package:kings_of_the_curve/authentication/registerPage.dart';
 import 'package:kings_of_the_curve/blocs/auth_bloc.dart';
 import 'package:kings_of_the_curve/homeModule/homePage.dart';
 import 'package:kings_of_the_curve/providers/options_provider.dart';
@@ -13,7 +12,7 @@ import 'package:kings_of_the_curve/utils/appColors.dart';
 import 'package:kings_of_the_curve/utils/appImages.dart';
 import 'package:kings_of_the_curve/utils/baseClass.dart';
 import 'package:kings_of_the_curve/utils/widget_dimensions.dart';
-import 'package:kings_of_the_curve/widgets/edittext_with_hint.dart';
+import 'package:kings_of_the_curve/widgets/edit_text_with_hint.dart';
 import 'package:kings_of_the_curve/widgets/rounded_edge_button.dart';
 import 'package:provider/provider.dart';
 

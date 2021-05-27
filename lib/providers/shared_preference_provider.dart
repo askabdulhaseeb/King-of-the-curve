@@ -45,18 +45,16 @@ class SharedPreferenceProvider with ChangeNotifier, BaseClass {
     }
   }
 
- /* updateRemovedCategoryInSharedPre(bool isAdded,String categoryId){
+  /* updateRemovedCategoryInSharedPre(bool isAdded,String categoryId){
     SharedPreferences pref = await SharedPreferences.getInstance();
   }*/
-
-
 
   clearPreference() async {
     //   SharedPreferences pref = await SharedPreferences.getInstance();
     UserDataModel model = new UserDataModel();
     model.isLoggedIn = false;
     model.userId = "0";
-    model.endlessModeHighscore = "0";
+    model.endlessModeHighScore = "0";
     model.endlessModeRemovedCategories = [];
     model.endlessModeRemovedSubcategories = [];
     model.timedModeRemovedCategories = [];
@@ -68,9 +66,9 @@ class SharedPreferenceProvider with ChangeNotifier, BaseClass {
     model.userName = "";
     model.userEmail = "";
     model.bookMarkedQuestions = [];
-    model.instituteName="";
-    model.instituteId="";
-    model.instituteEmail="";
+    model.instituteName = "";
+    model.instituteId = "";
+    model.instituteEmail = "";
     saveSharedPreference(model);
   }
 

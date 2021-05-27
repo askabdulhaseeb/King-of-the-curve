@@ -84,7 +84,7 @@ class _SinglePlayerPageState extends State<SinglePlayerPage> with BaseClass {
 
   StreamSubscription _purchaseUpdatedSubscription;
   StreamSubscription _purchaseErrorSubscription;
-  StreamSubscription _conectionSubscription;
+  StreamSubscription _connectionSubscription;
 
   Future<void> initPlatformState(BuildContext context) async {
     try {
@@ -111,7 +111,7 @@ class _SinglePlayerPageState extends State<SinglePlayerPage> with BaseClass {
         print('consumeAllItems error: $err');
       }
 
-      _conectionSubscription =
+      _connectionSubscription =
           FlutterInappPurchase.connectionUpdated.listen((connected) {
         print('connected: $connected');
       });
@@ -176,9 +176,9 @@ class _SinglePlayerPageState extends State<SinglePlayerPage> with BaseClass {
       _purchaseUpdatedSubscription.cancel();
       _purchaseUpdatedSubscription = null;
     }
-    if (_conectionSubscription != null) {
-      _conectionSubscription.cancel();
-      _conectionSubscription = null;
+    if (_connectionSubscription != null) {
+      _connectionSubscription.cancel();
+      _connectionSubscription = null;
     }
   }
 
@@ -233,7 +233,7 @@ class _SinglePlayerPageState extends State<SinglePlayerPage> with BaseClass {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 // crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  getCustomAppBar(context, topMargin: appbarTopMargin),
+                  getCustomAppBar(context, topMargin: appBarTopMargin),
                   Container(
                     margin: EdgeInsets.only(
                         top: Dimensions.pixels_15, left: Dimensions.pixels_30),

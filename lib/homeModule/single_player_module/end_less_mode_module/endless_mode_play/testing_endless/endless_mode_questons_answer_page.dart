@@ -5,7 +5,7 @@ import 'package:kings_of_the_curve/homeModule/single_player_module/game_over_mod
 import 'package:kings_of_the_curve/models/question_with_answers_model.dart';
 import 'package:kings_of_the_curve/providers/four_questions_provider.dart';
 import 'package:kings_of_the_curve/providers/question_provider.dart';
-import 'package:kings_of_the_curve/providers/remianing_life_count_provider.dart';
+import 'package:kings_of_the_curve/providers/remaining_life_count_provider.dart';
 import 'package:kings_of_the_curve/providers/shared_preference_provider.dart';
 import 'package:kings_of_the_curve/utils/appColors.dart';
 import 'package:kings_of_the_curve/utils/baseClass.dart';
@@ -78,7 +78,7 @@ class _EndlessModeQuestionAnswerPageState
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             SizedBox(
-                              height: appbarTopMargin,
+                              height: appBarTopMargin,
                             ),
                             Container(
                               margin: EdgeInsets.only(
@@ -214,14 +214,13 @@ class _EndlessModeQuestionAnswerPageState
                                     isEndless: true,
                                     isTimedMode: false,
                                     isReviewMode: false,
-                                    onAnswerSelected: (value)  {
+                                    onAnswerSelected: (value) {
                                       int selectedAnswer = value;
                                       questionProvider.addAnsweredQuestions(
                                           questionProvider.currentQuestion,
                                           selectedAnswer);
                                       if ((selectedAnswer + 1).toString() ==
                                           _currentSelectedQuestion.answer) {
-
                                         questionProvider.changeBackgroundColor(
                                             successColor, selectedAnswer);
                                         questionProvider.incrementScore();

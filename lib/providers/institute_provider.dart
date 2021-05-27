@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
-import 'package:kings_of_the_curve/models/intitutes_model.dart';
+import 'package:kings_of_the_curve/models/institutes_model.dart';
 import 'package:kings_of_the_curve/models/statsModel.dart';
 import 'package:kings_of_the_curve/services/firestore_service.dart';
 import 'package:kings_of_the_curve/utils/baseClass.dart';
@@ -31,9 +31,9 @@ class InstituteProvider with ChangeNotifier, BaseClass {
     Navigator.pop(context, true);
   }
 
-  Future<List<StatsModel>> checkStats(String userId)async {
+  Future<List<StatsModel>> checkStats(String userId) async {
     //await _fireStoreService.getStatsCount();
-  List<StatsModel> statsList =   await _fireStoreService.calculateStats(userId);
-  return statsList ;
+    List<StatsModel> statsList = await _fireStoreService.calculateStats(userId);
+    return statsList;
   }
 }

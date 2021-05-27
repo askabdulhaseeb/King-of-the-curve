@@ -6,7 +6,7 @@ import 'package:kings_of_the_curve/utils/baseClass.dart';
 import 'package:kings_of_the_curve/utils/constantWidgets.dart';
 import 'package:kings_of_the_curve/utils/constantsValues.dart';
 import 'package:kings_of_the_curve/utils/widget_dimensions.dart';
-import 'package:kings_of_the_curve/widgets/edittext_with_hint.dart';
+import 'package:kings_of_the_curve/widgets/edit_text_with_hint.dart';
 import 'package:kings_of_the_curve/widgets/rounded_edge_button.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
@@ -32,7 +32,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage>
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  getCustomAppBar(context, topMargin: appbarTopMargin),
+                  getCustomAppBar(context, topMargin: appBarTopMargin),
                   Container(
                     margin: EdgeInsets.only(
                         top: Dimensions.pixels_15, left: appLeftMargin),
@@ -54,7 +54,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage>
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                         /* EditTextWithHint(
+                          /* EditTextWithHint(
                             hintText: "Enter your username",
                             context: context,
                             leftMargin: Dimensions.pixels_30,
@@ -86,16 +86,17 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage>
                                 /*if (_userNameController.text.trim().isEmpty) {
                                   showError(
                                       context, "Username cannot be empty");
-                                } else*/ if (_forgotPasswordController.text
+                                } else*/
+                                if (_forgotPasswordController.text
                                     .trim()
                                     .isEmpty) {
                                   showError(context, "Email cannot be empty");
-                                } else if(!RegExp(
-                                    r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                                    .hasMatch(_forgotPasswordController.text.trim())){
+                                } else if (!RegExp(
+                                        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                    .hasMatch(_forgotPasswordController.text
+                                        .trim())) {
                                   showError(context, "Email format is invalid");
-                                }
-                                else {
+                                } else {
                                   try {
                                     showCircularDialog(context);
                                     await auth.sendPasswordResetEmail(
@@ -104,13 +105,11 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage>
                                     showSuccess(
                                         context, "Please check your email");
                                     popToPreviousScreen(context: context);
-                                  }
-                                  catch(error){
+                                  } catch (error) {
                                     popToPreviousScreen(context: context);
                                     showError(context, error.message);
                                     print(error.message);
                                   }
-                                  
                                 }
                               },
                               context: context),

@@ -6,18 +6,14 @@ import 'package:kings_of_the_curve/utils/appImages.dart';
 import 'package:kings_of_the_curve/utils/baseClass.dart';
 import 'package:kings_of_the_curve/utils/constantWidgets.dart';
 import 'package:kings_of_the_curve/utils/constantsValues.dart';
-import 'package:kings_of_the_curve/utils/size_config.dart';
 import 'package:kings_of_the_curve/utils/widget_dimensions.dart';
 import 'package:kings_of_the_curve/widgets/homeCardWidget.dart';
 import 'package:provider/provider.dart';
-
 import 'institution_leadership_pages/timed_global_leaderboard_high_score_page.dart';
-import 'institution_leadership_pages/institution_leadership_high_score_page.dart';
 
 class TimedLeaderShipModule extends StatefulWidget {
   @override
-  _TimedLeaderShipModuleState createState() =>
-      _TimedLeaderShipModuleState();
+  _TimedLeaderShipModuleState createState() => _TimedLeaderShipModuleState();
 }
 
 class _TimedLeaderShipModuleState extends State<TimedLeaderShipModule>
@@ -37,7 +33,7 @@ class _TimedLeaderShipModuleState extends State<TimedLeaderShipModule>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    getCustomAppBar(context, topMargin: appbarTopMargin),
+                    getCustomAppBar(context, topMargin: appBarTopMargin),
                     Container(
                       margin: EdgeInsets.only(
                           top: Dimensions.pixels_15,
@@ -87,7 +83,7 @@ class _TimedLeaderShipModuleState extends State<TimedLeaderShipModule>
                                       pushToNextScreenWithFadeAnimation(
                                           context: context,
                                           destination:
-                                          TimedGlobalLeaderBoardHighScorePage());
+                                              TimedGlobalLeaderBoardHighScorePage());
                                     },
                                     context: context,
                                     cardTitle: "Global\nHigh Score",
@@ -99,7 +95,7 @@ class _TimedLeaderShipModuleState extends State<TimedLeaderShipModule>
                                   SizedBox(
                                     height: Dimensions.pixels_30,
                                   ),
-                          /*        HomeCardWidget(
+                                  /*        HomeCardWidget(
                                     cardHeight: Dimensions.pixels_160,
                                     leftMargin: Dimensions.pixels_30,
                                     rightMargin: Dimensions.pixels_30,
@@ -128,7 +124,8 @@ class _TimedLeaderShipModuleState extends State<TimedLeaderShipModule>
                             Align(
                               alignment: Alignment.bottomCenter,
                               child: Container(
-                                margin: EdgeInsets.only(top: Dimensions.pixels_51),
+                                margin:
+                                    EdgeInsets.only(top: Dimensions.pixels_51),
                                 child: Image(
                                   height: Dimensions.pixels_200,
                                   image: AssetImage(leader_background),

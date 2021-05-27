@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kings_of_the_curve/blocs/auth_bloc.dart';
 import 'package:kings_of_the_curve/homeModule/single_player_module/end_less_mode_module/endless_mode_play/endless_mode_your_answers_page.dart';
 import 'package:kings_of_the_curve/providers/four_questions_provider.dart';
-import 'package:kings_of_the_curve/providers/remianing_life_count_provider.dart';
-import 'package:kings_of_the_curve/services/firestore_service.dart';
+import 'package:kings_of_the_curve/providers/remaining_life_count_provider.dart';
 import 'package:kings_of_the_curve/utils/appColors.dart';
 import 'package:kings_of_the_curve/utils/appImages.dart';
 import 'package:kings_of_the_curve/utils/baseClass.dart';
@@ -26,7 +25,7 @@ class GameOverPage extends StatelessWidget with BaseClass {
     var authBloc = Provider.of<AuthBloc>(context);
     remainingCount.resetLife();
     if (isEndlessMode) {
-     /* authBloc.currentUser.listen((event) {
+      /* authBloc.currentUser.listen((event) {
         FireStoreService().addEndlessHighScore(
             fourQuestionsProvider.getCorrectAnswersCount, event.uid);
       });*/
@@ -44,7 +43,7 @@ class GameOverPage extends StatelessWidget with BaseClass {
                   // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
-                      height: appbarTopMargin,
+                      height: appBarTopMargin,
                     ),
                     isEndlessMode
                         ? Container(

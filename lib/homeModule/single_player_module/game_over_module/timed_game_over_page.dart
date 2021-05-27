@@ -330,7 +330,7 @@ class _TimedGameOverPageState extends State<TimedGameOverPage> with BaseClass {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       SizedBox(
-                        height: appbarTopMargin,
+                        height: appBarTopMargin,
                       ),
                       Container(
                         margin: EdgeInsets.only(

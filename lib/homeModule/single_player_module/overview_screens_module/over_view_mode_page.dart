@@ -5,7 +5,6 @@ import 'package:kings_of_the_curve/utils/baseClass.dart';
 import 'package:kings_of_the_curve/utils/constantWidgets.dart';
 import 'package:kings_of_the_curve/utils/constantsValues.dart';
 import 'package:kings_of_the_curve/utils/widget_dimensions.dart';
-import 'package:kings_of_the_curve/widgets/card_widget_with_hint.dart';
 import 'package:kings_of_the_curve/widgets/homeCardWidget.dart';
 
 class OverViewModePage extends StatefulWidget {
@@ -13,7 +12,7 @@ class OverViewModePage extends StatefulWidget {
   _OverViewModePageState createState() => _OverViewModePageState();
 }
 
-class _OverViewModePageState extends State<OverViewModePage> with BaseClass{
+class _OverViewModePageState extends State<OverViewModePage> with BaseClass {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +27,7 @@ class _OverViewModePageState extends State<OverViewModePage> with BaseClass{
                   crossAxisAlignment: CrossAxisAlignment.start,
                   // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    getCustomAppBar(context, topMargin: appbarTopMargin),
+                    getCustomAppBar(context, topMargin: appBarTopMargin),
                     Container(
                       margin: EdgeInsets.only(
                           top: Dimensions.pixels_15,
@@ -48,7 +47,9 @@ class _OverViewModePageState extends State<OverViewModePage> with BaseClass{
                         decoration: getScreenBackgroundDecoration(),
                         child: Column(
                           children: [
-                            SizedBox(height: Dimensions.pixels_30,),
+                            SizedBox(
+                              height: Dimensions.pixels_30,
+                            ),
                             HomeCardWidget(
                               cardHeight: Dimensions.pixels_120,
                               leftMargin: Dimensions.pixels_30,
@@ -59,7 +60,8 @@ class _OverViewModePageState extends State<OverViewModePage> with BaseClass{
                               cardTitle: "Behavioral Science",
                               cardTextFontSize: Dimensions.pixels_24,
                               cardTextColor: Colors.white,
-                              cardBackgroundColor: behavioralScienceBackgroundColor,
+                              cardBackgroundColor:
+                                  behavioralScienceBackgroundColor,
                               cardTrailingImage: brain,
                             ),
                             SizedBox(
@@ -76,13 +78,11 @@ class _OverViewModePageState extends State<OverViewModePage> with BaseClass{
                               cardTextColor: Colors.white,
                               cardTitle: "Biology",
                               cardBackgroundColor: biologyBackgroundColor,
-
                               cardTrailingImage: biology,
                             ),
                             SizedBox(
                               height: Dimensions.pixels_30,
                             ),
-
                             HomeCardWidget(
                               cardHeight: Dimensions.pixels_120,
                               leftMargin: Dimensions.pixels_30,
@@ -94,7 +94,8 @@ class _OverViewModePageState extends State<OverViewModePage> with BaseClass{
                               cardTitle: "General Chemistry",
                               cardTextColor: Colors.white,
                               cardTrailingImage: chemistry,
-                              cardBackgroundColor: generalChemistryBackgroundColor,
+                              cardBackgroundColor:
+                                  generalChemistryBackgroundColor,
                             ),
                             SizedBox(
                               height: Dimensions.pixels_30,
@@ -110,7 +111,8 @@ class _OverViewModePageState extends State<OverViewModePage> with BaseClass{
                               cardTitle: "Organic Chemistry",
                               cardTextColor: Colors.white,
                               cardTrailingImage: organic_chemistry,
-                              cardBackgroundColor: organicChemistryBackgroundColor,
+                              cardBackgroundColor:
+                                  organicChemistryBackgroundColor,
                             ),
                             SizedBox(
                               height: Dimensions.pixels_30,

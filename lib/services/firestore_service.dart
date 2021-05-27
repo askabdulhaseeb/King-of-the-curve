@@ -2,14 +2,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kings_of_the_curve/models/four_question_model.dart';
-import 'package:kings_of_the_curve/models/intitutes_model.dart';
+import 'package:kings_of_the_curve/models/institutes_model.dart';
 import 'package:kings_of_the_curve/models/options_model.dart';
 import 'package:kings_of_the_curve/models/question_with_answers_model.dart';
 import 'package:kings_of_the_curve/models/review_option_model.dart';
 import 'package:kings_of_the_curve/models/statsModel.dart';
 import 'package:kings_of_the_curve/models/timed_option_model.dart';
 import 'package:kings_of_the_curve/models/user_model.dart';
-import 'package:kings_of_the_curve/providers/leaderboard_provider.dart';
+import 'package:kings_of_the_curve/providers/leader_board_provider.dart';
 import 'package:kings_of_the_curve/providers/shared_preference_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -19,7 +19,6 @@ class FireStoreService {
   FirebaseFirestore _db = FirebaseFirestore.instance;
   CollectionReference _userCollection;
   CollectionReference _endlessModeCategoryCollection;
-  BuildContext _context;
 
   SharedPreferenceProvider sharedPrefProvider;
 
@@ -37,7 +36,6 @@ class FireStoreService {
     /*leaderBoardProvider =
         Provider.of<LeaderBoardProvider>(context, listen: false);*/
     _endlessModeCategoryCollection = _db.collection(KEY_ENDLESS_MODE_CATEGORY);
-    _context = context;
     /*_categoryCollectionReference = _db.collection(KEY_CATEGORY);
     _singlePlayerModesCollectionReference =
         _db.collection(KEY_SINGLE_PLAYER_MODES);
@@ -461,7 +459,7 @@ class FireStoreService {
 
   // ---------------------------- Async Option List
 
-  /// -------- Get Asyn TImed Option List ///
+  /// -------- Get async TImed Option List ///
   Future<void> userDataList(String userId) async {
     //  String userId = sharedPrefProvider.userDataModel.userId ;
     DocumentSnapshot userDocumentSnapShot =

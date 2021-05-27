@@ -1,9 +1,8 @@
 import 'dart:async';
 import 'dart:io';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:kings_of_the_curve/authentification/confirm_institute_email.dart';
+import 'package:kings_of_the_curve/authentication/confirm_institute_email.dart';
 import 'package:kings_of_the_curve/blocs/auth_bloc.dart';
 import 'package:kings_of_the_curve/homeModule/homePage.dart';
 import 'package:kings_of_the_curve/providers/options_provider.dart';
@@ -12,7 +11,7 @@ import 'package:kings_of_the_curve/utils/appColors.dart';
 import 'package:kings_of_the_curve/utils/appImages.dart';
 import 'package:kings_of_the_curve/utils/baseClass.dart';
 import 'package:kings_of_the_curve/utils/widget_dimensions.dart';
-import 'package:kings_of_the_curve/widgets/edittext_with_hint.dart';
+import 'package:kings_of_the_curve/widgets/edit_text_with_hint.dart';
 import 'package:kings_of_the_curve/widgets/rounded_edge_button.dart';
 import 'package:provider/provider.dart';
 
@@ -44,7 +43,6 @@ class _RegisterPageState extends State<RegisterPage> with BaseClass {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
@@ -491,7 +489,6 @@ class _RegisterPageState extends State<RegisterPage> with BaseClass {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     if (loginStateSubscription != null) loginStateSubscription.cancel();
     super.dispose();
   }

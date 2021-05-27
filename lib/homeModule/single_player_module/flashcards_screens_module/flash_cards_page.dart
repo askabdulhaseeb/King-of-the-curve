@@ -7,14 +7,13 @@ import 'package:kings_of_the_curve/utils/constantWidgets.dart';
 import 'package:kings_of_the_curve/utils/constantsValues.dart';
 import 'package:kings_of_the_curve/utils/widget_dimensions.dart';
 import 'package:kings_of_the_curve/widgets/card_widget_with_hint.dart';
-import 'package:kings_of_the_curve/widgets/homeCardWidget.dart';
 
 class FlashCardPage extends StatefulWidget {
   @override
   _FlashCardPageState createState() => _FlashCardPageState();
 }
 
-class _FlashCardPageState extends State<FlashCardPage> with  BaseClass{
+class _FlashCardPageState extends State<FlashCardPage> with BaseClass {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +28,7 @@ class _FlashCardPageState extends State<FlashCardPage> with  BaseClass{
                   crossAxisAlignment: CrossAxisAlignment.start,
                   // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    getCustomAppBar(context, topMargin: appbarTopMargin),
+                    getCustomAppBar(context, topMargin: appBarTopMargin),
                     Container(
                       margin: EdgeInsets.only(
                           top: Dimensions.pixels_15,
@@ -49,7 +48,9 @@ class _FlashCardPageState extends State<FlashCardPage> with  BaseClass{
                         decoration: getScreenBackgroundDecoration(),
                         child: Column(
                           children: [
-                            SizedBox(height: Dimensions.pixels_30,),
+                            SizedBox(
+                              height: Dimensions.pixels_30,
+                            ),
                             CardWidgetWithHint(
                               cardHeight: Dimensions.pixels_120,
                               leftMargin: Dimensions.pixels_30,
@@ -77,13 +78,11 @@ class _FlashCardPageState extends State<FlashCardPage> with  BaseClass{
                               cardTextColor: Colors.white,
                               cardTitle: "Create\nFlashcards",
                               cardBackgroundColor: flashcardsModeColor,
-
                               cardTrailingImage: create_flash_card,
                             ),
                             SizedBox(
                               height: Dimensions.pixels_30,
                             ),
-
                             CardWidgetWithHint(
                               cardHeight: Dimensions.pixels_120,
                               leftMargin: Dimensions.pixels_30,
@@ -107,7 +106,9 @@ class _FlashCardPageState extends State<FlashCardPage> with  BaseClass{
                               cardTextFontSize: Dimensions.pixels_24,
                               cardRadius: Dimensions.pixels_15,
                               onCardClicked: (value) {
-                                pushToNextScreenWithFadeAnimation(context: context, destination: OptionsPage());
+                                pushToNextScreenWithFadeAnimation(
+                                    context: context,
+                                    destination: OptionsPage());
                               },
                               context: context,
                               cardTitle: "Options",

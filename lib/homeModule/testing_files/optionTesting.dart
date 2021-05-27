@@ -20,7 +20,7 @@ class OptionTestingPage extends StatefulWidget {
   _OptionTestingPageState createState() => _OptionTestingPageState();
 }
 
-class _OptionTestingPageState extends State<OptionTestingPage> with BaseClass{
+class _OptionTestingPageState extends State<OptionTestingPage> with BaseClass {
   bool isBioChemistryVisible = false;
   bool isGetValue = true;
   int currentVisibleChildIndex = -1;
@@ -67,7 +67,7 @@ class _OptionTestingPageState extends State<OptionTestingPage> with BaseClass{
           ? Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                getCustomAppBar(context, topMargin: appbarTopMargin),
+                getCustomAppBar(context, topMargin: appBarTopMargin),
                 Container(
                   margin: EdgeInsets.only(
                       top: Dimensions.pixels_15, left: Dimensions.pixels_30),
@@ -113,40 +113,46 @@ class _OptionTestingPageState extends State<OptionTestingPage> with BaseClass{
                                   rightMargin: Dimensions.pixels_30,
                                   cardRadius: Dimensions.pixels_15,
                                   onCategoryCheckboxTap: (value) {
-                                    if(sharePrefProvider.userDataModel.isPremium) {
+                                    if (sharePrefProvider
+                                        .userDataModel.isPremium) {
                                       if (/*_optionList*/ optionProvider
                                           .getAsyncOptionList
                                           .elementAt(index)
                                           .isCategorySelected) {
                                         optionProvider
                                             .changeEndlessCategoryStatus(
-                                            optionProvider.getAsyncOptionList
-                                                .elementAt(index)
-                                                .isCategorySelected,
-                                            optionProvider.getAsyncOptionList
-                                                .elementAt(index)
-                                                .categoryDocumentId,
-                                            context,
-                                            sharePrefProvider
-                                                .userDataModel.userId,
-                                            index);
+                                                optionProvider
+                                                    .getAsyncOptionList
+                                                    .elementAt(index)
+                                                    .isCategorySelected,
+                                                optionProvider
+                                                    .getAsyncOptionList
+                                                    .elementAt(index)
+                                                    .categoryDocumentId,
+                                                context,
+                                                sharePrefProvider
+                                                    .userDataModel.userId,
+                                                index);
                                         //  setState(() {});
                                       } else {
                                         optionProvider
                                             .changeEndlessCategoryStatus(
-                                            optionProvider.getAsyncOptionList
-                                                .elementAt(index)
-                                                .isCategorySelected,
-                                            optionProvider.getAsyncOptionList
-                                                .elementAt(index)
-                                                .categoryDocumentId,
-                                            context,
-                                            sharePrefProvider
-                                                .userDataModel.userId,
-                                            index);
+                                                optionProvider
+                                                    .getAsyncOptionList
+                                                    .elementAt(index)
+                                                    .isCategorySelected,
+                                                optionProvider
+                                                    .getAsyncOptionList
+                                                    .elementAt(index)
+                                                    .categoryDocumentId,
+                                                context,
+                                                sharePrefProvider
+                                                    .userDataModel.userId,
+                                                index);
                                       }
-                                    }else{
-                                      showError(context, "Upgrade to premium to select or unselect categories ");
+                                    } else {
+                                      showError(context,
+                                          "Upgrade to premium to select or unselect categories ");
                                     }
                                   },
                                   onCardClicked: (value) {
@@ -408,7 +414,7 @@ class _OptionTestingPageState extends State<OptionTestingPage> with BaseClass{
         ),
         GestureDetector(
           onTap: () {
-            if(sharePrefProvider.userDataModel.isPremium) {
+            if (sharePrefProvider.userDataModel.isPremium) {
               if (list.isSubCatSelected) {
                 optionProvider.changeEndlessSubCategoryStatus(
                   list.isSubCatSelected,
@@ -437,9 +443,9 @@ class _OptionTestingPageState extends State<OptionTestingPage> with BaseClass{
                         .subCategoryList
                         .indexOf(list));
               }
-            }
-            else{
-              showError(context, "Upgrade to premium to select or unselect sub categories ");
+            } else {
+              showError(context,
+                  "Upgrade to premium to select or unselect sub categories ");
             }
           },
           child: Container(

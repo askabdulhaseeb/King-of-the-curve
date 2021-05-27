@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:kings_of_the_curve/authentification/confirm_institute_email.dart';
+import 'package:kings_of_the_curve/authentication/confirm_institute_email.dart';
 import 'package:kings_of_the_curve/providers/shared_preference_provider.dart';
-import 'package:kings_of_the_curve/settingsModule/editEmailPage.dart';
 import 'package:kings_of_the_curve/settingsModule/editPasswordPage.dart';
 import 'package:kings_of_the_curve/utils/appColors.dart';
 import 'package:kings_of_the_curve/utils/baseClass.dart';
 import 'package:kings_of_the_curve/utils/constantWidgets.dart';
 import 'package:kings_of_the_curve/utils/constantsValues.dart';
 import 'package:kings_of_the_curve/utils/widget_dimensions.dart';
-import 'package:kings_of_the_curve/widgets/edittext_with_hint.dart';
+import 'package:kings_of_the_curve/widgets/edit_text_with_hint.dart';
 import 'package:kings_of_the_curve/widgets/rounded_edge_button.dart';
 import 'package:provider/provider.dart';
 
@@ -31,8 +30,9 @@ class _AccountDetailPageState extends State<AccountDetailPage> with BaseClass {
         Provider.of<SharedPreferenceProvider>(context, listen: false);
     _userNameEditingController.text = sharedPrefProvider.userDataModel.userName;
     _emailEditingController.text = sharedPrefProvider.userDataModel.userEmail;
-    if(sharedPrefProvider.userDataModel.instituteName!=null){
-      _instituteEditingController.text = sharedPrefProvider.userDataModel.instituteName;
+    if (sharedPrefProvider.userDataModel.instituteName != null) {
+      _instituteEditingController.text =
+          sharedPrefProvider.userDataModel.instituteName;
     }
     super.initState();
   }
@@ -51,7 +51,7 @@ class _AccountDetailPageState extends State<AccountDetailPage> with BaseClass {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      getCustomAppBar(context, topMargin: appbarTopMargin),
+                      getCustomAppBar(context, topMargin: appBarTopMargin),
                       Container(
                         margin: EdgeInsets.only(
                             top: Dimensions.pixels_15,
@@ -222,7 +222,8 @@ class _AccountDetailPageState extends State<AccountDetailPage> with BaseClass {
                                       hintText: "Institution",
                                       context: context,
                                       leftMargin: Dimensions.pixels_30,
-                                      textEditingController: _instituteEditingController,
+                                      textEditingController:
+                                          _instituteEditingController,
                                       isEnabled: sharedPref.userDataModel
                                                       .instituteName ==
                                                   null ||
@@ -257,29 +258,25 @@ class _AccountDetailPageState extends State<AccountDetailPage> with BaseClass {
                                                     Duration(milliseconds: 100),
                                               ),
                                             ).then((value) {
-                                              print( sharedPref
-                                                  .userDataModel
-                                                  .instituteName);
-                                              print("YOYOYOYOYOYY");
+                                              print(sharedPref
+                                                  .userDataModel.instituteName);
                                               if (value != null) {
-
-
                                                 setState(() {
                                                   sharedPref.userDataModel
-                                                      .instituteName ==
-                                                      null ||
-                                                      sharedPref
-                                                          .userDataModel
-                                                          .instituteName
-                                                          .isEmpty
+                                                                  .instituteName ==
+                                                              null ||
+                                                          sharedPref
+                                                              .userDataModel
+                                                              .instituteName
+                                                              .isEmpty
                                                       ? _instituteEditingController
-                                                      .text = ""
+                                                          .text = ""
                                                       : _instituteEditingController
-                                                      .text =
-                                                      sharedPref.userDataModel
-                                                          .instituteName;
+                                                              .text =
+                                                          sharedPref
+                                                              .userDataModel
+                                                              .instituteName;
                                                 });
-
                                               }
                                             });
                                             /*pushToNextScreenWithFadeAnimation(
@@ -308,8 +305,10 @@ class _AccountDetailPageState extends State<AccountDetailPage> with BaseClass {
                                       : Container(),
                                 ],
                               ),
-                           SizedBox(height: Dimensions.pixels_33,),
-                           /*   Container(
+                              SizedBox(
+                                height: Dimensions.pixels_33,
+                              ),
+                              /*   Container(
                                 margin: EdgeInsets.only(
                                     left: Dimensions.pixels_30,
                                     right: Dimensions.pixels_30,
@@ -328,7 +327,7 @@ class _AccountDetailPageState extends State<AccountDetailPage> with BaseClass {
                                     });
                                   },
                                   title: Text(
-                                    "Show My Institution on Leaderboards",
+                                    "Show My Institution on LeaderBoards",
                                     style: TextStyle(
                                         color: hintEditTextColor,
                                         fontSize: Dimensions.pixels_14,

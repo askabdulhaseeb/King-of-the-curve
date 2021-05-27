@@ -1,8 +1,4 @@
-import 'dart:convert';
-
 import 'package:flutter/foundation.dart';
-import 'package:kings_of_the_curve/models/user_model.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class UserPreferenceProvider with ChangeNotifier {
   /*UserDataModel _userDataModel;

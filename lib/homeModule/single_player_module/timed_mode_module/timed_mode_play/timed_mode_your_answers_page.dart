@@ -20,7 +20,7 @@ class YourAnswersTimedMode extends StatelessWidget with BaseClass {
                   child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  getCustomAppBar(context, topMargin: appbarTopMargin),
+                  getCustomAppBar(context, topMargin: appBarTopMargin),
                   Container(
                     margin: EdgeInsets.only(
                         top: Dimensions.pixels_15, left: Dimensions.pixels_30),
@@ -140,7 +140,7 @@ Widget _getQuestionsWithAnswersWidget({String title}) {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            _gertAnswerTile(
+            _getAnswerTile(
                 backgroundColor: wrongAnswerBackground,
                 textColor: wrongAnswerTextColor,
                 title: "Answer A",
@@ -148,7 +148,7 @@ Widget _getQuestionsWithAnswersWidget({String title}) {
             SizedBox(
               width: Dimensions.pixels_15,
             ),
-            _gertAnswerTile(
+            _getAnswerTile(
                 backgroundColor: dividerColor,
                 textColor: notAttemptedAnswerTextColor,
                 title: "Answer B",
@@ -161,7 +161,7 @@ Widget _getQuestionsWithAnswersWidget({String title}) {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            _gertAnswerTile(
+            _getAnswerTile(
                 backgroundColor: correctAnswerBackgroundColor,
                 textColor: successColor,
                 title: "Answer C",
@@ -169,7 +169,7 @@ Widget _getQuestionsWithAnswersWidget({String title}) {
             SizedBox(
               width: Dimensions.pixels_15,
             ),
-            _gertAnswerTile(
+            _getAnswerTile(
                 backgroundColor: dividerColor,
                 textColor: notAttemptedAnswerTextColor,
                 title: "Answer D",
@@ -198,7 +198,7 @@ Widget _getQuestionsWithAnswersWidget({String title}) {
   );
 }
 
-Widget _gertAnswerTile(
+Widget _getAnswerTile(
     {String title, Color backgroundColor, Color textColor, String subTitle}) {
   return Expanded(
     child: Container(

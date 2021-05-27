@@ -1,31 +1,35 @@
-
-
 class TimedOptionsModel {
   String categoryName;
   String categoryDocumentId;
   bool isCategorySelected;
-  bool isSubCategoriesVisible ;
-  List<TImedSubCatList> subCategoryList;
+  bool isSubCategoriesVisible;
+  List<TimedSubCatList> subCategoryList;
 
-  TimedOptionsModel.fromMap(Map<String, dynamic> categoryMap, String categoryDocId,
-      bool catSelected, List userUnSelectedSubCategories) {
+  TimedOptionsModel.fromMap(
+      Map<String, dynamic> categoryMap,
+      String categoryDocId,
+      bool catSelected,
+      List userUnSelectedSubCategories) {
     //categoryName = categoryMap['endless_mode_category_name'];
     categoryName = categoryMap['option_category_name'];
     categoryDocumentId = categoryDocId;
     isCategorySelected = catSelected;
-    isSubCategoriesVisible =false ;
-    subCategoryList = <TImedSubCatList>[];
+    isSubCategoriesVisible = false;
+    subCategoryList = <TimedSubCatList>[];
     try {
-   //   categoryMap['endless_mode_subcategories'].forEach((e) {
-      /*categoryMap['endless_mode_subcategories']*/categoryMap['sub_categories'].forEach((e) {
+      //   categoryMap['endless_mode_subcategories'].forEach((e) {
+      /*categoryMap['endless_mode_subcategories']*/ categoryMap[
+              'sub_categories']
+          .forEach((e) {
         if (!isCategorySelected) {
-          subCategoryList.add(new TImedSubCatList.fromJson(e, false));
+          subCategoryList.add(new TimedSubCatList.fromJson(e, false));
         } else {
-         // if (userUnSelectedSubCategories.contains(e['endless_mode_subcategory_id'])) {
-          if (userUnSelectedSubCategories.contains(e['subcategory_id']/*e['endless_mode_subcategory_id']*/)) {
-            subCategoryList.add(new TImedSubCatList.fromJson(e, false));
+          // if (userUnSelectedSubCategories.contains(e['endless_mode_subcategory_id'])) {
+          if (userUnSelectedSubCategories.contains(
+              e['subcategory_id'] /*e['endless_mode_subcategory_id']*/)) {
+            subCategoryList.add(new TimedSubCatList.fromJson(e, false));
           } else {
-            subCategoryList.add(new TImedSubCatList.fromJson(e, true));
+            subCategoryList.add(new TimedSubCatList.fromJson(e, true));
           }
         }
       });
@@ -35,17 +39,17 @@ class TimedOptionsModel {
   }
 }
 
-class TImedSubCatList {
+class TimedSubCatList {
   String subCatId;
   String subCategoryName;
   bool isSubCatSelected;
 
-  TImedSubCatList({this.subCatId, this.subCategoryName, this.isSubCatSelected});
+  TimedSubCatList({this.subCatId, this.subCategoryName, this.isSubCatSelected});
 
-  TImedSubCatList.fromJson(
-      Map<String, dynamic> docRef,
-      bool isSubCategorySelected,
-      ) {
+  TimedSubCatList.fromJson(
+    Map<String, dynamic> docRef,
+    bool isSubCategorySelected,
+  ) {
     // subCategoryName = docRef['endless_mode_subcategory_name'];
     subCategoryName = docRef['subcategory_name'];
     isSubCatSelected = isSubCategorySelected;

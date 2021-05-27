@@ -5,7 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:kings_of_the_curve/homeModule/single_player_module/game_over_module/endless_game_over_page.dart';
 import 'package:kings_of_the_curve/models/question_with_answers_model.dart';
-import 'package:kings_of_the_curve/providers/remianing_life_count_provider.dart';
+import 'package:kings_of_the_curve/providers/remaining_life_count_provider.dart';
 import 'package:kings_of_the_curve/providers/shared_preference_provider.dart';
 import 'package:kings_of_the_curve/services/firestore_service.dart';
 import 'package:kings_of_the_curve/utils/appColors.dart';
@@ -23,7 +23,6 @@ class QuestionProvider with ChangeNotifier, BaseClass {
   QuestionWithAnswersModel _currentQuestion;
   int _previousRandomNumber = -1;
   RemainingLifeCountProvider remainingLifeProvider;
-  BuildContext _context;
 
   bool _isAnswerTapped;
   int _selectedMode = 0; // 1= endless, 2 = timed ,  3 = review
@@ -38,7 +37,6 @@ class QuestionProvider with ChangeNotifier, BaseClass {
     remainingLifeProvider =
         Provider.of<RemainingLifeCountProvider>(context, listen: false);
     _getAllQuestions();
-    _context = context;
     _isAnswerTapped = false;
   }
 
@@ -72,13 +70,12 @@ class QuestionProvider with ChangeNotifier, BaseClass {
   void _setQuestions(List<QuestionWithAnswersModel> questionData) {
     _questionsList = questionData;
     print(_questionsList.length);
-    print("QUESRION LIST");
+    print("QUESTION LIST");
     setNewQuestion();
   }
 
 // setting current question to be shown
   void setNewQuestion() {
-
     int randomNumber = Random().nextInt(_questionsList.length);
 
     print(_previousRandomNumber);
@@ -180,7 +177,7 @@ class QuestionProvider with ChangeNotifier, BaseClass {
     });
   }
 
-  // change questioon
+  // change question
 
   void _changeQuestion(int index) {
     _currentQuestion.options.elementAt(index).optionBackgroundColor =
@@ -259,7 +256,6 @@ class QuestionProvider with ChangeNotifier, BaseClass {
       String categoryName,
       int percentage) async {
     try {
-
       await _fireStoreService.saveEndlessCorrectQuestionCount(userId,
           subCategoryId, subCategoryName, categoryId, categoryName, percentage);
     } catch (error) {

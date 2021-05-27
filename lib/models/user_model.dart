@@ -1,6 +1,6 @@
 class UserDataModel {
   String userId;
-  String endlessModeHighscore;
+  String endlessModeHighScore;
   List<String> endlessModeRemovedCategories;
   List<String> endlessModeRemovedSubcategories;
   List<String> timedModeRemovedCategories;
@@ -14,14 +14,14 @@ class UserDataModel {
   bool isLoggedIn;
   String userEmail;
   bool isPremium;
-String instituteName ;
-String instituteId ;
-String instituteEmail;
+  String instituteName;
+  String instituteId;
+  String instituteEmail;
   String userName;
 
   UserDataModel(
       {this.userId,
-      this.endlessModeHighscore,
+      this.endlessModeHighScore,
       this.endlessModeRemovedCategories,
       this.endlessModeRemovedSubcategories,
       this.timedModeRemovedCategories,
@@ -34,13 +34,15 @@ String instituteEmail;
       this.bookMarkedQuestions,
       this.flaggedQuestions,
       this.userName,
-        this.instituteEmail,
-      this.isPremium,this.instituteId,this.instituteName,
+      this.instituteEmail,
+      this.isPremium,
+      this.instituteId,
+      this.instituteName,
       this.isLoggedIn = false});
 
   UserDataModel.fromJson(Map<String, dynamic> json, bool isLogin) {
     userId = json['user_id'].toString();
-    endlessModeHighscore = json['endless_mode_highscore'].toString();
+    endlessModeHighScore = json['endless_mode_highscore'].toString();
     endlessModeRemovedCategories =
         json['endless_mode_removed_categories'].cast<String>();
     endlessModeRemovedSubcategories =
@@ -67,16 +69,16 @@ String instituteEmail;
     userEmail = json['user_email'].toString();
     userName = json['user_name'].toString();
     isPremium = json['isPremium'];
-    instituteId =json['institute_id'];
-    instituteName=json['institute_name'];
-    instituteEmail=json['institute_email'];
+    instituteId = json['institute_id'];
+    instituteName = json['institute_name'];
+    instituteEmail = json['institute_email'];
     isLoggedIn = isLogin;
   }
 
   Map<String, dynamic> toJson(UserDataModel userDataModel) {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['user_id'] = userDataModel.userId;
-    data['endless_mode_highscore'] = userDataModel.endlessModeHighscore;
+    data['endless_mode_highscore'] = userDataModel.endlessModeHighScore;
     data['endless_mode_removed_categories'] =
         userDataModel.endlessModeRemovedCategories;
     data['endless_mode_removed_subcategories'] =

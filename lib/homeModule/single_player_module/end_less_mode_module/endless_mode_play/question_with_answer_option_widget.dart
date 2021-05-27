@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kings_of_the_curve/providers/four_questions_provider.dart';
-import 'package:kings_of_the_curve/providers/remianing_life_count_provider.dart';
+import 'package:kings_of_the_curve/providers/remaining_life_count_provider.dart';
 import 'package:kings_of_the_curve/utils/appColors.dart';
 import 'package:kings_of_the_curve/utils/widget_dimensions.dart';
 import 'package:provider/provider.dart';
@@ -18,7 +18,7 @@ class QuestionAnswerOptionsWidget extends StatefulWidget {
 
   QuestionAnswerOptionsWidget(
       {@required this.question,
- /*     @required this.answerOne,
+      /*     @required this.answerOne,
       @required this.answerTwo,
       @required this.answerThree,
       @required this.answerFour,*/
@@ -139,7 +139,7 @@ class _QuestionAnswerOptionsWidgetState
                   borderRadius: BorderRadius.circular(Dimensions.pixels_5),
                 ),
                 child: Text(
-                  ""/*widget.answerOne*/,
+                  "" /*widget.answerOne*/,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       color: answer1TextBackground,
@@ -191,7 +191,7 @@ class _QuestionAnswerOptionsWidgetState
                   borderRadius: BorderRadius.circular(Dimensions.pixels_5),
                 ),
                 child: Text(
-                  ""/*widget.answerTwo*/,
+                  "" /*widget.answerTwo*/,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       color: answer2TextBackground,
@@ -243,7 +243,7 @@ class _QuestionAnswerOptionsWidgetState
                   borderRadius: BorderRadius.circular(Dimensions.pixels_5),
                 ),
                 child: Text(
-                  ""/*widget.answerThree*/,
+                  "" /*widget.answerThree*/,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       color: answer3TextBackground,
@@ -294,7 +294,7 @@ class _QuestionAnswerOptionsWidgetState
                   borderRadius: BorderRadius.circular(Dimensions.pixels_5),
                 ),
                 child: Text(
-                  ""/*widget.answerFour*/,
+                  "" /*widget.answerFour*/,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       color: answer4TextBackground,

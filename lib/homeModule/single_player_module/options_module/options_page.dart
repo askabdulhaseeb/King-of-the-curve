@@ -28,7 +28,7 @@ class _OptionsPageState extends State<OptionsPage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          getCustomAppBar(context, topMargin: appbarTopMargin),
+          getCustomAppBar(context, topMargin: appBarTopMargin),
           Container(
             margin: EdgeInsets.only(
               top: Dimensions.pixels_15,

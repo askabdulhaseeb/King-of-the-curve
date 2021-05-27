@@ -1,23 +1,20 @@
 import 'dart:async';
 import 'dart:io';
 import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inapp_purchase/flutter_inapp_purchase.dart';
-import 'package:kings_of_the_curve/blocs/auth_bloc.dart';
 import 'package:kings_of_the_curve/homeModule/single_player_module/end_less_mode_module/endless_mode_play/endless_mode_your_answers_page.dart';
 import 'package:kings_of_the_curve/providers/four_questions_provider.dart';
 import 'package:kings_of_the_curve/providers/options_provider.dart';
 import 'package:kings_of_the_curve/providers/question_provider.dart';
-import 'package:kings_of_the_curve/providers/remianing_life_count_provider.dart';
+import 'package:kings_of_the_curve/providers/remaining_life_count_provider.dart';
 import 'package:kings_of_the_curve/providers/shared_preference_provider.dart';
 import 'package:kings_of_the_curve/utils/appColors.dart';
 import 'package:kings_of_the_curve/utils/appImages.dart';
 import 'package:kings_of_the_curve/utils/baseClass.dart';
 import 'package:kings_of_the_curve/utils/constantWidgets.dart';
 import 'package:kings_of_the_curve/utils/constantsValues.dart';
-import 'package:kings_of_the_curve/utils/progress_dialog.dart';
 import 'package:kings_of_the_curve/utils/widget_dimensions.dart';
 import 'package:kings_of_the_curve/widgets/rounded_edge_button.dart';
 import 'package:provider/provider.dart';
@@ -310,24 +307,24 @@ class _EndlessGameOverPageState extends State<EndlessGameOverPage>
     var optionProvider = Provider.of<OptionProvider>(context);
 
     String highestScore;
-    if (sharePrefProvider.userDataModel.endlessModeHighscore != null) {
+    if (sharePrefProvider.userDataModel.endlessModeHighScore != null) {
       if ((sharePrefProvider
                   .userDataModel.endlessModeRemovedCategories.length ==
               0) &&
           (sharePrefProvider
                   .userDataModel.endlessModeRemovedSubcategories.length ==
               0)) {
-        if (int.parse(sharePrefProvider.userDataModel.endlessModeHighscore) <
+        if (int.parse(sharePrefProvider.userDataModel.endlessModeHighScore) <
             questionProvider.getCorrectAnswersCount) {
           optionProvider.setUserEndlessHighScore(
               questionProvider.getCorrectAnswersCount.toString(),
               sharePrefProvider.userDataModel.userId);
           highestScore = questionProvider.getCorrectAnswersCount.toString();
         } else {
-          highestScore = sharePrefProvider.userDataModel.endlessModeHighscore;
+          highestScore = sharePrefProvider.userDataModel.endlessModeHighScore;
         }
       } else {
-        highestScore = sharePrefProvider.userDataModel.endlessModeHighscore;
+        highestScore = sharePrefProvider.userDataModel.endlessModeHighScore;
       }
     }
 
@@ -355,7 +352,7 @@ class _EndlessGameOverPageState extends State<EndlessGameOverPage>
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SizedBox(
-                          height: appbarTopMargin,
+                          height: appBarTopMargin,
                         ),
                         Container(
                           margin: EdgeInsets.only(

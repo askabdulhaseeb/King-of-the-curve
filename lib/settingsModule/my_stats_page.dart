@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../models/statsModel.dart';
-import '../providers/intitute_provider.dart';
+import '../providers/institute_provider.dart';
 import '../providers/shared_preference_provider.dart';
 import '../utils/appColors.dart';
 import '../utils/baseClass.dart';

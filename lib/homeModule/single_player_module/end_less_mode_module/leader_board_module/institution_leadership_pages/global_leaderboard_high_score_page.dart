@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kings_of_the_curve/providers/leaderboard_provider.dart';
+import 'package:kings_of_the_curve/providers/leader_board_provider.dart';
 import 'package:kings_of_the_curve/providers/shared_preference_provider.dart';
 import 'package:kings_of_the_curve/utils/appColors.dart';
 import 'package:kings_of_the_curve/utils/appImages.dart';
@@ -60,7 +60,7 @@ class _GlobalLeaderBoardHighScorePageState
                         getCustomAppBarWithText(
                           context,
                           "Global High Score",
-                          topMargin: appbarTopMargin,
+                          topMargin: appBarTopMargin,
                         ),
                         SizedBox(
                           height: Dimensions.pixels_45,
@@ -132,17 +132,23 @@ class _GlobalLeaderBoardHighScorePageState
                                         return Column(
                                           children: [
                                             _getScoreWidgets(
-                                                userName: leaderBoardProvider.usersList.elementAt(index).userName/*"Rutgers University"*/,
-                                                score: leaderBoardProvider.usersList
+                                                userName: leaderBoardProvider
+                                                    .usersList
                                                     .elementAt(index)
-                                                    .endlessModeHighscore,
+                                                    .userName /*"Rutgers University"*/,
+                                                score: leaderBoardProvider
+                                                    .usersList
+                                                    .elementAt(index)
+                                                    .endlessModeHighScore,
                                                 universityImage: index == 0
                                                     ? first_place
                                                     : index == 1
                                                         ? second_place
                                                         : third_place,
                                                 position: index),
-                                            getDivider(dividerColor: Colors.grey.shade200),
+                                            getDivider(
+                                                dividerColor:
+                                                    Colors.grey.shade200),
                                           ],
                                         );
                                       }),
@@ -183,24 +189,21 @@ class _GlobalLeaderBoardHighScorePageState
             ),
     );
   }
-String getTrailingString(int rank){
-    if(rank ==0){
+
+  String getTrailingString(int rank) {
+    if (rank == 0) {
       return "";
-    }
-    else if(rank ==1){
+    } else if (rank == 1) {
       return "st";
-    }
-    else if(rank ==2){
+    } else if (rank == 2) {
       return "nd";
-    }
-    else if(rank ==3){
+    } else if (rank == 3) {
       return "rd";
-    }
-    else {
+    } else {
       return "th";
     }
+  }
 
-}
   Widget _getTabBarItem(String title) {
     return Column(
       children: [

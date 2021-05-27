@@ -48,8 +48,14 @@ class RoundedEdgeButton extends StatelessWidget {
           right: rightMargin,
           top: topMargin,
           bottom: bottomMargin),
-      child: RaisedButton(
-        elevation: buttonElevation,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          elevation: buttonElevation,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(buttonRadius),
+          ),
+          primary: color,
+        ),
         child: Text(
           text,
           style: TextStyle(
@@ -61,10 +67,6 @@ class RoundedEdgeButton extends StatelessWidget {
         onPressed: () {
           onPressed(context);
         },
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(buttonRadius),
-        ),
-        color: color,
       ),
     );
   }
